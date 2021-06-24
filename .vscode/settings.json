@@ -1,0 +1,102 @@
+{
+  "files.associations": {
+    ".babelrc": "jsonc",
+    ".eslintrc": "jsonc",
+    ".prettierrc": "jsonc",
+    ".eslintignore": "ignore"
+  },
+
+  "javascript.validate.enable": false,
+  "javascript.format.enable": false,
+  "typescript.format.enable": false,
+
+  "search.exclude": {
+    ".git": true,
+    ".eslintcache": true,
+    "src/dist": true,
+    "src/main.prod.js": true,
+    "src/main.prod.js.map": true,
+    "bower_components": true,
+    "dll": true,
+    "release": true,
+    "node_modules": true,
+    "npm-debug.log.*": true,
+    "test/**/__snapshots__": true,
+    "yarn.lock": true,
+    "*.{css,sass,scss}.d.ts": true
+  },
+
+  "folderTemplates.structures": [
+    {
+      "name": "Presenter Template",
+      "omitParentDirectory": true,
+      "omitFTName": false,
+      "structure": [
+        {
+          "fileName": "atoms",
+          "template": "EmptyDirectory"
+        },
+        {
+          "fileName": "molecules",
+          "template": "EmptyDirectory"
+        },
+        {
+          "fileName": "organisms",
+          "template": "EmptyDirectory"
+        },
+        {
+          "fileName": "hooks",
+          "template": "EmptyDirectory"
+        },
+        {
+          "fileName": "states",
+          "template": "EmptyDirectory"
+        },
+        {
+          "fileName": "layouts",
+          "template": "EmptyDirectory"
+        },
+        {
+          "fileName": "pages",
+          "template": "EmptyDirectory"
+        }
+      ]
+    },
+    {
+      "name": "Component Template",
+      "omitParentDirectory": true,
+      "structure": [
+        {
+          "fileName": "<FTName>/index.tsx",
+          "template": "Typescript Functional Component"
+        },
+        {
+          "fileName": "<FTName>/styled.tsx",
+          "template": "Styled Component"
+        }
+      ]
+    }
+  ],
+
+  "folderTemplates.fileTemplates": {
+    "Typescript Functional Component": [
+      "import React from 'react';",
+      "",
+      "import * as S from './styled';",
+      "",
+      "type Props = {",
+      "}",
+      "",
+      "export const <FTName>: React.FC<Props> = () => {",
+      "  return <div/>;",
+      "};"
+    ],
+    "Styled Component": [
+      "import { styled } from '@/styles';",
+      "",
+      "export const Wrapper = styled.div`",
+      "  width: 100%;",
+      "`"
+    ]
+  }
+}
