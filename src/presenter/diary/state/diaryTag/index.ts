@@ -16,6 +16,11 @@ export const diaryTagColorAtom = atom<DiaryTag['color']>({
   default: '#22194D',
 });
 
+export const diaryTagSettingModalAtom = atom<boolean>({
+  key: 'diaryTag/atom/diaryTagSettingModalAtom',
+  default: false,
+});
+
 export const diaryTagFormSelector = selector<DiaryTag>({
   key: 'diaryTag/selector/diaryTagFormSelector',
   get: ({ get }) => {

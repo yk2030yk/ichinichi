@@ -1,19 +1,14 @@
 import React from 'react';
 
-import { useRouteUseCase } from '@/presenter/global/hooks/dependency';
-import { useHistory } from 'react-router-dom';
+import { useOpenDiaryTagSettingModal } from '@/presenter/diary/hooks/diaryTag/modal';
 import { MonthList } from '../../../molecules/submenu/MonthList';
 import * as S from './styled';
 
 const Links = () => {
-  const routeUseCase = useRouteUseCase();
-  const history = useHistory();
+  const open = useOpenDiaryTagSettingModal();
   return (
-    <button
-      type="button"
-      onClick={() => history.push(routeUseCase.getManageDiaryTagPath())}
-    >
-      tag
+    <button type="button" onClick={open}>
+      タグを設定
     </button>
   );
 };

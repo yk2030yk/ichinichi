@@ -48,7 +48,7 @@ export const darkTheme: Theme = {
       main: '#393b48',
       dark: '#292a33',
       text: '#d6d6d6',
-      transparent: '#55586b52',
+      transparent: '#19191bbf',
     },
     text: {
       light: '#f1f1f1',

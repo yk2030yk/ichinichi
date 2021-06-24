@@ -1,5 +1,4 @@
 import React from 'react';
-import { GithubPicker, ColorResult } from 'react-color';
 import { useRecoilState, useRecoilValue, useResetRecoilState } from 'recoil';
 
 import { useInsertDiaryTag } from '@/presenter/diary/hooks/diaryTag';
@@ -10,24 +9,15 @@ import {
   diaryTagsAtom,
 } from '@/presenter/diary/state/diaryTag';
 import { DiaryTagLabel } from '@/presenter/diary/atoms/diaryTag/DiaryTagLabel';
-import { useTagColor } from '@/presenter/global/hooks/theme';
+import { GlobalColorPicker } from '@/presenter/global/molecules/colorPicker/GlobalColorPicker';
 import * as S from './styled';
 
 export const DiaryTagColorForm: React.FC = () => {
   const [color, setColor] = useRecoilState(diaryTagColorAtom);
-  const colors = useTagColor();
 
-  const onChangeColor = (c: ColorResult) => setColor(c.hex);
+  const onChangeColor = (c: string) => setColor(c);
 
-  return (
-    <GithubPicker
-      color={color}
-      colors={colors}
-      triangle="hide"
-      onChange={onChangeColor}
-      onChangeComplete={onChangeColor}
-    />
-  );
+  return <GlobalColorPicker color={color} onChange={onChangeColor} />;
 };
 
 export const DiaryTagLabelForm: React.FC = () => {
