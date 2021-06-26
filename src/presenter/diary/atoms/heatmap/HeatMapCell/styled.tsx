@@ -42,7 +42,7 @@ export const Col = styled.div<{
   textCount: number;
   size?: string;
 }>`
-  ${({ theme, textCount, isToday, hasDate, size = '13px' }) => [
+  ${({ theme, textCount, isToday, hasDate, size = '11px' }) => [
     sizeCss({ w: size, h: size }),
     cellColorCss({ theme, textCount, isToday, hasDate }),
     boxBorderRadiusCss(theme),

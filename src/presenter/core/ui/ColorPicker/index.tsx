@@ -12,7 +12,12 @@ export const ColorPicker: React.FC<Props> = ({ color, colors, onChange }) => {
   return (
     <S.ColorPicker>
       {colors.map((c) => (
-        <S.ColorItem color={c} key={c} onClick={() => onChange(c)} />
+        <S.ColorItem
+          selected={c === color}
+          color={c}
+          key={c}
+          onClick={() => onChange(c)}
+        />
       ))}
     </S.ColorPicker>
   );

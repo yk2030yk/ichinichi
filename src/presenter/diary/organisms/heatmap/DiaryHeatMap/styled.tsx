@@ -29,6 +29,6 @@ export const HeatMapContent = styled.div`
 export const HeatMapGraph = styled.div`
   display: grid;
   grid-auto-flow: column;
-  grid-template-rows: repeat(7, 13px);
-  grid-gap: 4px;
+  grid-template-rows: repeat(7, 11px);
+  grid-gap: 3px;
 `;

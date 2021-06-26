@@ -4,4 +4,5 @@ import { middlePaddingCss } from '@/styles/mixins';
 export const Wrapper = styled.div`
   ${({ theme }) => [middlePaddingCss(theme)]}
   width: 100%;
+  max-width: 900px;
 `;

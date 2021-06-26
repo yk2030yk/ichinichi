@@ -28,6 +28,7 @@ export const DiaryTagLabelForm: React.FC = () => {
       type="text"
       value={label}
       placeholder="タグを入力してください"
+      maxLength={20}
       onChange={(e: any) => setLabel(e.target.value)}
     />
   );
