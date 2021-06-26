@@ -12,6 +12,7 @@ export const ResizePanel: React.FC<Props> = ({ children }) => {
     <div>
       <div>{children}</div>
       <div role="button" onMouseDown={onMouseDown} />
+      <div>hoge</div>
     </div>
   );
 };
