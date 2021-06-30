@@ -1,17 +1,12 @@
 import { styled } from '@/styles';
-import {
-  fontHoverColorCss,
-  fontMainColorCss,
-  pointerCss,
-  smallPaddingCss,
-} from '@/styles/mixins';
+import { mixins } from '@/styles/mixins';
 
 export const Item = styled.div`
   ${({ theme }) => [
-    smallPaddingCss(theme),
-    fontMainColorCss(theme),
-    pointerCss(),
-    fontHoverColorCss(theme),
+    mixins.smallPadding(theme),
+    mixins.fontMainColor(theme),
+    mixins.pointer(),
+    mixins.fontHoverColor(theme),
   ]}
   display: flex;
   align-items: center;

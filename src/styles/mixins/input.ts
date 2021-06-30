@@ -1,6 +1,6 @@
 import { css, Theme } from '@/styles';
 
-const createInputCss = (theme: Theme) => css`
+const createInput = (theme: Theme) => css`
   color: #d6d6d6;
   border: solid 1px ${theme.palette.background?.dark};
   background-color: ${theme.palette.background?.dark};
@@ -17,4 +17,4 @@ const createInputCss = (theme: Theme) => css`
   }
 `;
 
-export const inputCss = (theme: Theme) => createInputCss(theme);
+export const input = (theme: Theme) => createInput(theme);

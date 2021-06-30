@@ -1,8 +1,8 @@
 import { styled } from '@/styles';
-import { middlePaddingCss } from '@/styles/mixins';
+import { mixins } from '@/styles/mixins';
 
 export const Wrapper = styled.div`
-  ${({ theme }) => [middlePaddingCss(theme)]}
+  ${({ theme }) => [mixins.middlePadding(theme)]}
   width: 100%;
   max-width: 900px;
 `;

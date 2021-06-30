@@ -1,8 +1,8 @@
 import { styled } from '@/styles';
-import { inputCss } from '@/styles/mixins';
+import { mixins } from '@/styles/mixins';
 
 export const TextArea = styled.textarea`
-  ${({ theme }) => inputCss(theme)}
+  ${({ theme }) => mixins.input(theme)}
   width: 100%;
   resize: none;
 `;

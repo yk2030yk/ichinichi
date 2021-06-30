@@ -9,7 +9,7 @@ export const DateCells: React.FC = () => {
   return (
     <>
       {heatMapCalendar.map((data) => (
-        <DateCell data={data} key={data.date} />
+        <DateCell data={data} key={data.key} />
       ))}
     </>
   );

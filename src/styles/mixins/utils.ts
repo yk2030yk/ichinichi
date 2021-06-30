@@ -1,6 +1,6 @@
 import { css } from '@/styles';
 
-export const sizeCss = ({
+export const size = ({
   w,
   h,
 }: {
@@ -11,7 +11,7 @@ export const sizeCss = ({
   ${h && `height: ${h};`};
 `;
 
-export const positionCss = ({
+export const position = ({
   t,
   b,
   l,

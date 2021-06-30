@@ -1,5 +1,5 @@
 import { styled, Theme, css } from '@/styles';
-import { boxBorderRadiusCss, sizeCss } from '@/styles/mixins';
+import { mixins } from '@/styles/mixins';
 
 const calcCellColor = ({
   theme,
@@ -22,7 +22,7 @@ const calcCellColor = ({
   return theme.palette.background?.light;
 };
 
-const cellColorCss = ({
+const cellColor = ({
   theme,
   textCount,
   isToday,
@@ -43,8 +43,8 @@ export const Col = styled.div<{
   size?: string;
 }>`
   ${({ theme, textCount, isToday, hasDate, size = '11px' }) => [
-    sizeCss({ w: size, h: size }),
-    cellColorCss({ theme, textCount, isToday, hasDate }),
-    boxBorderRadiusCss(theme),
+    mixins.size({ w: size, h: size }),
+    cellColor({ theme, textCount, isToday, hasDate }),
+    mixins.boxBorderRadius(theme),
   ]}
 `;

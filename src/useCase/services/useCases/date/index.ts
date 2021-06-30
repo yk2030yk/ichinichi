@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from 'uuid';
 import { IDateUseCase } from '@/useCase/interfaces/useCases/date';
 import { DateRepository } from '@/domain/services/repository/date';
 
@@ -30,6 +31,7 @@ export class DateUseCase implements IDateUseCase {
       month: 0,
       day: 0,
       formattedDate: '',
+      key: uuidv4(),
     }));
 
     return [
@@ -37,6 +39,7 @@ export class DateUseCase implements IDateUseCase {
       ...yearDateList.map((d) => ({
         ...d,
         formattedDate: this.dateRepository.formatDate(d.date, 'YYYY/MM/DD'),
+        key: d.date,
       })),
     ];
   }

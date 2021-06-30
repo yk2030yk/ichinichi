@@ -1,13 +1,5 @@
 import { styled } from '@/styles';
-import {
-  boxCss,
-  boxHoverCss,
-  fontWrapCss,
-  pointerCss,
-  smallMarginLeftCss,
-  smallMarginTopCss,
-  resetFirstItemMarginCss,
-} from '@/styles/mixins';
+import { mixins } from '@/styles/mixins';
 
 export const CurrentInfo = styled.div``;
 
@@ -16,18 +8,21 @@ export const TagContent = styled.div`
 `;
 
 export const TagWrapper = styled.div`
-  ${({ theme }) => [smallMarginLeftCss(theme), resetFirstItemMarginCss()]}
+  ${({ theme }) => [
+    mixins.smallMarginLeft(theme),
+    mixins.resetFirstItemMargin(),
+  ]}
 `;
 
 export const ContentTextWrapper = styled.div`
-  ${({ theme }) => smallMarginTopCss(theme)}
+  ${({ theme }) => mixins.smallMarginTop(theme)}
 `;
 
 export const ContentText = styled.div`
   ${({ theme }) => [
-    boxCss(theme),
-    boxHoverCss(theme),
-    fontWrapCss(),
-    pointerCss(),
+    mixins.box(theme),
+    mixins.boxHover(theme),
+    mixins.fontWrap(),
+    mixins.pointer(),
   ]}
 `;

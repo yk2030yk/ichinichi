@@ -1,29 +1,27 @@
 import { styled } from '@/styles';
-import {
-  backgroundDarkCss,
-  backgroundMainCss,
-  fontMainColorCss,
-} from '@/styles/mixins';
+import { mixins } from '@/styles/mixins';
 
 export const Wrapper = styled.div`
-  ${({ theme }) => [backgroundMainCss(theme), fontMainColorCss(theme)]};
+  ${({ theme }) => [
+    mixins.backgroundColorMain(theme),
+    mixins.fontMainColor(theme),
+  ]};
   width: 100%;
   height: 100%;
-  display: grid;
-  grid-template-columns: 50px 300px 1fr;
+  display: flex;
 `;
 
 export const LeftContent = styled.div`
-  ${({ theme }) => backgroundDarkCss(theme)};
-  width: 100%;
+  ${({ theme }) => mixins.backgroundColorDark(theme)};
+  width: 50px;
 `;
 
 export const MiddleContent = styled.div`
-  ${({ theme }) => backgroundMainCss(theme)};
+  ${({ theme }) => mixins.backgroundColorMain(theme)};
   width: 100%;
 `;
 
 export const RightContent = styled.div`
-  ${({ theme }) => backgroundMainCss(theme)};
-  width: 100%;
+  ${({ theme }) => mixins.backgroundColorMain(theme)};
+  overflow-y: scroll;
 `;

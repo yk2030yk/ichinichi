@@ -1,25 +1,18 @@
 import { styled } from '@/styles';
-import {
-  fontMainColorCss,
-  fontMainSizeCss,
-  fontWeightBoldCss,
-  middleMarginTopCss,
-  boxBorderBottomCss,
-  middlePaddingCss,
-} from '@/styles/mixins';
+import { mixins } from '@/styles/mixins';
 
 export const ModalItem = styled.div`
-  ${({ theme }) => [middlePaddingCss(theme), boxBorderBottomCss(theme)]}
+  ${({ theme }) => [mixins.middlePadding(theme), mixins.boxBorderBottom(theme)]}
 `;
 
 export const ModalItemContent = styled.div`
-  ${({ theme }) => middleMarginTopCss(theme)}
+  ${({ theme }) => mixins.middleMarginTop(theme)}
 `;
 
 export const ModalItemTitle = styled.div`
   ${({ theme }) => [
-    fontMainColorCss(theme),
-    fontMainSizeCss(theme),
-    fontWeightBoldCss(theme),
+    mixins.fontMainColor(theme),
+    mixins.fontMainSize(theme),
+    mixins.fontWeightBold(theme),
   ]}
 `;

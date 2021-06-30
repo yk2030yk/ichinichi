@@ -1,6 +1,6 @@
 import { css, Theme } from '@/styles';
 
-export const listItemCss = (theme: Theme) => css`
+export const listItem = (theme: Theme) => css`
   margin-top: ${theme.space.small}px;
 
   &:first-of-type {
@@ -8,7 +8,7 @@ export const listItemCss = (theme: Theme) => css`
   }
 `;
 
-export const horizontalListItemCss = (theme: Theme) => css`
+export const horizontalListItem = (theme: Theme) => css`
   margin-left: ${theme.space.small}px;
 
   &:first-of-type {

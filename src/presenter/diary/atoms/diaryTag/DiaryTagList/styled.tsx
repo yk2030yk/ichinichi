@@ -1,5 +1,5 @@
 import { styled } from '@/styles';
-import { smallMarginLeftCss, resetFirstItemMarginCss } from '@/styles/mixins';
+import { mixins } from '@/styles/mixins';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -7,5 +7,8 @@ export const Wrapper = styled.div`
 `;
 
 export const TagWrapper = styled.div`
-  ${({ theme }) => [smallMarginLeftCss(theme), resetFirstItemMarginCss()]}
+  ${({ theme }) => [
+    mixins.smallMarginLeft(theme),
+    mixins.resetFirstItemMargin(),
+  ]}
 `;

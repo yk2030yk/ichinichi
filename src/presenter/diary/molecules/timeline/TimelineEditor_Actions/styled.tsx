@@ -1,25 +1,23 @@
 import { styled } from '@/styles';
-import {
-  okButtonCss,
-  cancelButtonCss,
-  smallMarginLeftCss,
-  resetFirstItemMarginCss,
-} from '@/styles/mixins';
+import { mixins } from '@/styles/mixins';
 
 export const EditActions = styled.div`
   display: flex;
 `;
 
 export const EditAction = styled.div`
-  ${({ theme }) => [smallMarginLeftCss(theme), resetFirstItemMarginCss()]}
+  ${({ theme }) => [
+    mixins.smallMarginLeft(theme),
+    mixins.resetFirstItemMargin(),
+  ]}
 `;
 
 export const SaveButton = styled.button`
-  ${({ theme }) => okButtonCss(theme)}
+  ${({ theme }) => mixins.okButton(theme)}
   width: 80px;
 `;
 
 export const CancelButton = styled.button`
-  ${({ theme }) => cancelButtonCss(theme)}
+  ${({ theme }) => mixins.cancelButton(theme)}
   width: 80px;
 `;

@@ -1,12 +1,12 @@
 import { css, Theme } from '@/styles';
 
-export const boxCss = (theme: Theme) => css`
+export const box = (theme: Theme) => css`
   background-color: ${theme.palette.background?.main};
   padding: ${theme.space.small}px;
   border-radius: ${theme.border.radius.main}px;
 `;
 
-export const boxHoverCss = (theme: Theme) => css`
+export const boxHover = (theme: Theme) => css`
   transition: background-color 0.3s;
 
   &:hover {
@@ -14,18 +14,18 @@ export const boxHoverCss = (theme: Theme) => css`
   }
 `;
 
-export const boxBorderCss = (theme: Theme) => css`
+export const boxBorder = (theme: Theme) => css`
   border: solid 1px ${theme.palette.background?.light};
 `;
 
-export const boxBorderBottomCss = (theme: Theme) => css`
+export const boxBorderBottom = (theme: Theme) => css`
   border-bottom: solid 1px ${theme.palette.background?.light};
 `;
 
-export const boxBorderRadiusCss = (theme: Theme) => css`
+export const boxBorderRadius = (theme: Theme) => css`
   border-radius: ${theme.border.radius.main}px;
 `;
 
-export const boxShadowCss = (theme: Theme) => css`
+export const boxShadow = (theme: Theme) => css`
   box-shadow: ${theme.boxShadow};
 `;

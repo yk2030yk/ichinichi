@@ -1,30 +1,30 @@
 import { css, Theme } from '@/styles';
 
-export const smallPaddingCss = (theme: Theme) => css`
+export const smallPadding = (theme: Theme) => css`
   padding: ${theme.space.small}px;
 `;
 
-export const middlePaddingCss = (theme: Theme) => css`
+export const middlePadding = (theme: Theme) => css`
   padding: ${theme.space.middle}px;
 `;
 
-export const smallMarginLeftCss = (theme: Theme) => css`
+export const smallMarginLeft = (theme: Theme) => css`
   margin-left: ${theme.space.small}px;
 `;
 
-export const middleMarginLeftCss = (theme: Theme) => css`
+export const middleMarginLeft = (theme: Theme) => css`
   margin-left: ${theme.space.middle}px;
 `;
 
-export const smallMarginTopCss = (theme: Theme) => css`
+export const smallMarginTop = (theme: Theme) => css`
   margin-top: ${theme.space.small}px;
 `;
 
-export const middleMarginTopCss = (theme: Theme) => css`
+export const middleMarginTop = (theme: Theme) => css`
   margin-top: ${theme.space.middle}px;
 `;
 
-export const resetFirstItemMarginCss = () => css`
+export const resetFirstItemMargin = () => css`
   &:first-of-type {
     margin: 0;
   }

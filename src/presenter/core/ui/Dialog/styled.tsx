@@ -1,21 +1,11 @@
 import { styled, css, Theme } from '@/styles';
-import {
-  cancelButtonCss,
-  okButtonCss,
-  boxBorderRadiusCss,
-  boxShadowCss,
-  fontLargeSizeCss,
-  fontLightColorCss,
-  middlePaddingCss,
-  middleMarginTopCss,
-  smallMarginLeftCss,
-} from '@/styles/mixins';
+import { mixins } from '@/styles/mixins';
 
-const modalBackGroundColorCss = (theme: Theme) => css`
+const modalBackGroundColor = (theme: Theme) => css`
   background-color: ${theme.palette.background?.transparent};
 `;
 
-const modalContentColorCss = (theme: Theme) => css`
+const modalContentColor = (theme: Theme) => css`
   background-color: ${theme.palette.background?.main};
 `;
 
@@ -29,36 +19,36 @@ export const Background = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  ${({ theme }) => [modalBackGroundColorCss(theme)]}
+  ${({ theme }) => [modalBackGroundColor(theme)]}
 `;
 
 export const ConfirmMessage = styled.div`
-  ${({ theme }) => [fontLargeSizeCss(theme), fontLightColorCss(theme)]}
+  ${({ theme }) => [mixins.fontLargeSize(theme), mixins.fontLightColor(theme)]}
 `;
 
 export const ConfirmContent = styled.div`
   width: 400px;
   ${({ theme }) => [
-    modalContentColorCss(theme),
-    boxBorderRadiusCss(theme),
-    boxShadowCss(theme),
-    middlePaddingCss(theme),
+    modalContentColor(theme),
+    mixins.boxBorderRadius(theme),
+    mixins.boxShadow(theme),
+    mixins.middlePadding(theme),
   ]}
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
 `;
 
 export const ButtonArea = styled.div`
-  ${({ theme }) => [middleMarginTopCss(theme)]}
+  ${({ theme }) => [mixins.middleMarginTop(theme)]}
   display: flex;
   justify-content: flex-end;
 `;
 
 export const CancelButton = styled.button`
-  ${({ theme }) => [cancelButtonCss(theme)]}
+  ${({ theme }) => [mixins.cancelButton(theme)]}
   width: 80px;
 `;
 
 export const OkButton = styled.button`
-  ${({ theme }) => [okButtonCss(theme), smallMarginLeftCss(theme)]}
+  ${({ theme }) => [mixins.okButton(theme), mixins.smallMarginLeft(theme)]}
   width: 80px;
 `;

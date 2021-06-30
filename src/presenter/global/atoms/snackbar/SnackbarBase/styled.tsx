@@ -1,15 +1,6 @@
 import { SnackbarType } from '@/presenter/global/state/snackbar';
 import { styled, Theme, css } from '@/styles';
-import {
-  fontSmallSizeCss,
-  smallPaddingCss,
-  smallMarginLeftCss,
-  boxShadowCss,
-  boxBorderRadiusCss,
-  sizeCss,
-  pointerCss,
-  positionCss,
-} from '@/styles/mixins';
+import { mixins } from '@/styles/mixins';
 
 const getPaletteBySnackbarType = (theme: Theme, snackbarType: SnackbarType) => {
   switch (snackbarType) {
@@ -24,7 +15,7 @@ const getPaletteBySnackbarType = (theme: Theme, snackbarType: SnackbarType) => {
   }
 };
 
-const snackbarStyleCss = (theme: Theme, snackbarType: SnackbarType) => {
+const snackbarStyle = (theme: Theme, snackbarType: SnackbarType) => {
   const palette = getPaletteBySnackbarType(theme, snackbarType);
   return css`
     background-color: ${palette?.main};
@@ -34,13 +25,13 @@ const snackbarStyleCss = (theme: Theme, snackbarType: SnackbarType) => {
 
 export const Snackbar = styled.div<{ snackbarType: SnackbarType }>`
   ${({ theme, snackbarType }) => [
-    snackbarStyleCss(theme, snackbarType),
-    fontSmallSizeCss(theme),
-    smallPaddingCss(theme),
-    boxShadowCss(theme),
-    boxBorderRadiusCss(theme),
-    sizeCss({ w: '250px' }),
-    positionCss({ b: '30px', l: '50%' }),
+    snackbarStyle(theme, snackbarType),
+    mixins.fontSmallSize(theme),
+    mixins.smallPadding(theme),
+    mixins.boxShadow(theme),
+    mixins.boxBorderRadius(theme),
+    mixins.size({ w: '250px' }),
+    mixins.position({ b: '30px', l: '50%' }),
   ]}
   position: fixed;
   display: flex;
@@ -54,11 +45,11 @@ export const SnackbarLeft = styled.div`
 `;
 
 export const SnackbarRight = styled.div`
-  ${() => pointerCss()}
+  ${() => mixins.pointer()}
   display: flex;
   align-items: center;
 `;
 
 export const Message = styled.div`
-  ${({ theme }) => smallMarginLeftCss(theme)}
+  ${({ theme }) => mixins.smallMarginLeft(theme)}
 `;

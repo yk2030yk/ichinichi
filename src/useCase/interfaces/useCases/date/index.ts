@@ -15,6 +15,7 @@ export interface IDateUseCase {
     month: number;
     day: number;
     formattedDate: string;
+    key: string;
   }[];
 
   getTimelineCalendar: (

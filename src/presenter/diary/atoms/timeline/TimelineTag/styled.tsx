@@ -1,15 +1,11 @@
 import { styled } from '@/styles';
-import {
-  smallPaddingCss,
-  boxBorderRadiusCss,
-  pointerCss,
-} from '@/styles/mixins';
+import { mixins } from '@/styles/mixins';
 
 export const Tag = styled.div<{ color?: string; editable: boolean }>`
   ${({ theme, editable }) => [
-    smallPaddingCss(theme),
-    boxBorderRadiusCss(theme),
-    editable && pointerCss(),
+    mixins.smallPadding(theme),
+    mixins.boxBorderRadius(theme),
+    editable && mixins.pointer(),
   ]}
   display: grid;
   grid-template-columns: ${({ editable }) =>

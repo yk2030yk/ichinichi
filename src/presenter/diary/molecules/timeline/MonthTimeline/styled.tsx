@@ -1,12 +1,12 @@
 import { styled } from '@/styles';
-import { fontLargeSizeCss } from '@/styles/mixins';
+import { mixins } from '@/styles/mixins';
 
 export const MonthTimeline = styled.div`
   width: 100%;
 `;
 
 export const MonthTimelineTitle = styled.div`
-  ${({ theme }) => fontLargeSizeCss(theme)}
+  ${({ theme }) => mixins.fontLargeSize(theme)}
   width: 100%;
 `;
 

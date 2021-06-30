@@ -1,14 +1,9 @@
 import { styled } from '@/styles';
-import {
-  smallMarginTopCss,
-  boxBorderBottomCss,
-  fontHoverColorCss,
-  middlePaddingCss,
-} from '@/styles/mixins';
+import { mixins } from '@/styles/mixins';
 
 export const CardWrapper = styled.div`
-  ${({ theme }) => boxBorderBottomCss(theme)}
-  ${({ theme }) => middlePaddingCss(theme)}
+  ${({ theme }) => mixins.boxBorderBottom(theme)}
+  ${({ theme }) => mixins.middlePadding(theme)}
   width: 100%;
   padding-left: 0;
   padding-right: 0;
@@ -30,7 +25,7 @@ export const CardTopIconArea = styled.div`
 `;
 
 export const CardTopIconWrapper = styled.div`
-  ${({ theme }) => fontHoverColorCss(theme)}
+  ${({ theme }) => mixins.fontHoverColor(theme)}
   cursor: pointer;
   padding: 3px;
 `;
@@ -38,6 +33,6 @@ export const CardTopIconWrapper = styled.div`
 export const CardDate = styled.p``;
 
 export const CardContent = styled.div`
-  ${({ theme }) => smallMarginTopCss(theme)}
+  ${({ theme }) => mixins.smallMarginTop(theme)}
   width: 100%;
 `;

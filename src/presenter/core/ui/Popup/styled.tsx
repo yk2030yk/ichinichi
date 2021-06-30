@@ -1,10 +1,5 @@
 import { styled } from '@/styles';
-import {
-  backgroundMainCss,
-  boxBorderRadiusCss,
-  boxShadowCss,
-  smallMarginTopCss,
-} from '@/styles/mixins';
+import { mixins } from '@/styles/mixins';
 
 export const Popup = styled.div<{
   width?: number;
@@ -17,10 +12,10 @@ export const Popup = styled.div<{
   overflow-y: scroll;
   position: absolute;
   ${({ theme }) => [
-    boxShadowCss(theme),
-    boxBorderRadiusCss(theme),
-    backgroundMainCss(theme),
-    smallMarginTopCss(theme),
+    mixins.boxShadow(theme),
+    mixins.boxBorderRadius(theme),
+    mixins.backgroundColorMain(theme),
+    mixins.smallMarginTop(theme),
   ]}
 `;
 

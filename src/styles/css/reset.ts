@@ -1,4 +1,4 @@
-export const resetCss = `
+export const reset = `
 /*! destyle.css v2.0.2 | MIT License | https://github.com/nicolas-cusan/destyle.css */
 
 /* Reset box-model and set borders */
@@ -487,4 +487,4 @@ template {
 
 [hidden] {
   display: none;
-}`
+}`;

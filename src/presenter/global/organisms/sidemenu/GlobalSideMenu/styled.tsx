@@ -1,8 +1,8 @@
 import { styled } from '@/styles';
-import { smallPaddingCss } from '@/styles/mixins';
+import { mixins } from '@/styles/mixins';
 
 export const Wrapper = styled.div`
-  ${({ theme }) => smallPaddingCss(theme)}
+  ${({ theme }) => mixins.smallPadding(theme)}
   width: 100%;
 `;
 

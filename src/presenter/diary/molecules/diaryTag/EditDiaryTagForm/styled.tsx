@@ -1,23 +1,17 @@
 import { styled } from '@/styles';
-import {
-  inputCss,
-  okButtonCss,
-  resetFirstItemMarginCss,
-  smallMarginLeftCss,
-  smallMarginTopCss,
-} from '@/styles/mixins';
+import { mixins } from '@/styles/mixins';
 
 export const Input = styled.input`
-  ${({ theme }) => inputCss(theme)}
+  ${({ theme }) => mixins.input(theme)}
   width: 200px;
 `;
 
 export const ButtonWrapper = styled.button`
-  ${({ theme }) => smallMarginLeftCss(theme)}
+  ${({ theme }) => mixins.smallMarginLeft(theme)}
 `;
 
 export const Button = styled.button`
-  ${({ theme }) => okButtonCss(theme)}
+  ${({ theme }) => mixins.okButton(theme)}
   width: 80px;
 `;
 
@@ -32,5 +26,8 @@ export const TagForm = styled.div`
 `;
 
 export const TagFormItem = styled.div`
-  ${({ theme }) => [smallMarginTopCss(theme), resetFirstItemMarginCss()]}
+  ${({ theme }) => [
+    mixins.smallMarginTop(theme),
+    mixins.resetFirstItemMargin(),
+  ]}
 `;

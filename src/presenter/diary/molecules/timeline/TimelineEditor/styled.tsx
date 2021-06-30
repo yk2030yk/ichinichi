@@ -1,8 +1,11 @@
 import { styled } from '@/styles';
-import { smallMarginTopCss, resetFirstItemMarginCss } from '@/styles/mixins';
+import { mixins } from '@/styles/mixins';
 
 export const TimelineEditor = styled.div``;
 
 export const TimelineEditorItem = styled.div`
-  ${({ theme }) => [smallMarginTopCss(theme), resetFirstItemMarginCss()]}
+  ${({ theme }) => [
+    mixins.smallMarginTop(theme),
+    mixins.resetFirstItemMargin(),
+  ]}
 `;

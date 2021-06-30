@@ -1,8 +1,8 @@
 import { styled } from '@/styles';
-import { middleMarginTopCss, middlePaddingCss } from '@/styles/mixins';
+import { mixins } from '@/styles/mixins';
 
 export const ContentWrapper = styled.div`
-  ${({ theme }) => [middlePaddingCss(theme)]}
+  ${({ theme }) => [mixins.middlePadding(theme)]}
   width: 100%;
 `;
 
@@ -12,5 +12,5 @@ export const ContentTop = styled.div`
 
 export const ContentMiddle = styled.div`
   width: 100%;
-  ${({ theme }) => [middleMarginTopCss(theme)]}
+  ${({ theme }) => [mixins.middleMarginTop(theme)]}
 `;

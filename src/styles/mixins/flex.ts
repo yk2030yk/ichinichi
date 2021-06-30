@@ -1,6 +1,6 @@
 import { css } from '@/styles';
 
-export const flexVerticalCenterCss = () => css`
+export const flexVerticalCenter = () => css`
   display: flex;
   align-items: center;
 `;

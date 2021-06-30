@@ -1,52 +1,52 @@
 import { css, Theme } from '@/styles';
 
-export const fontLargeSizeCss = (theme: Theme) => css`
+export const fontLargeSize = (theme: Theme) => css`
   font-size: 14px;
   font-weight: 600;
 `;
 
-export const fontMainSizeCss = (theme: Theme) => css`
+export const fontMainSize = (theme: Theme) => css`
   font-size: 12px;
   font-weight: 300;
 `;
 
-export const fontSmallSizeCss = (theme: Theme) => css`
+export const fontSmallSize = (theme: Theme) => css`
   font-size: 12px;
   font-weight: 300;
 `;
 
-export const fontPrimaryMainColorCss = (theme: Theme) => css`
+export const fontPrimaryMainColor = (theme: Theme) => css`
   color: ${theme.palette.primary?.main};
 `;
 
-export const fontMainColorCss = (theme: Theme) => css`
+export const fontMainColor = (theme: Theme) => css`
   color: ${theme.palette.text.main};
 `;
 
-export const fontDarkColorCss = (theme: Theme) => css`
+export const fontDarkColor = (theme: Theme) => css`
   color: ${theme.palette.text.dark};
 `;
 
-export const fontLightColorCss = (theme: Theme) => css`
+export const fontLightColor = (theme: Theme) => css`
   color: ${theme.palette.text.light};
 `;
 
-export const fontHoverColorCss = (theme: Theme) => css`
+export const fontHoverColor = (theme: Theme) => css`
   transition: color 0.3s;
   &:hover {
     color: ${theme.palette.text.light};
   }
 `;
 
-export const fontWrapCss = () => css`
+export const fontWrap = () => css`
   word-wrap: break-word;
   white-space: pre-wrap;
 `;
 
-export const fontWeightBoldCss = (theme: Theme) => css`
+export const fontWeightBold = (theme: Theme) => css`
   font-weight: 600;
 `;
 
-export const pointerCss = () => css`
+export const pointer = () => css`
   cursor: pointer;
 `;

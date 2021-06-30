@@ -1,41 +1,31 @@
 import { styled } from '@/styles';
 
-import {
-  inputCss,
-  middlePaddingCss,
-  smallPaddingCss,
-  middleMarginTopCss,
-  fontHoverColorCss,
-  fontPrimaryMainColorCss,
-  fontDarkColorCss,
-  fontWeightBoldCss,
-  pointerCss,
-} from '@/styles/mixins';
+import { mixins } from '@/styles/mixins';
 
 export const Wrapper = styled.div`
-  ${({ theme }) => middlePaddingCss(theme)}
+  ${({ theme }) => mixins.middlePadding(theme)}
   width: 100%;
 `;
 
 export const YearSelect = styled.select`
-  ${({ theme }) => [inputCss(theme)]}
+  ${({ theme }) => [mixins.input(theme)]}
   width: 100%;
 `;
 
 export const MonthList = styled.div`
-  ${({ theme }) => middleMarginTopCss(theme)}
+  ${({ theme }) => mixins.middleMarginTop(theme)}
   width: 100%;
 `;
 
 export const MonthListItem = styled.div<{ selected: boolean }>`
   ${({ theme, selected }) => [
-    fontDarkColorCss(theme),
-    fontWeightBoldCss(theme),
-    smallPaddingCss(theme),
-    pointerCss(),
-    ...(selected
-      ? [fontPrimaryMainColorCss(theme)]
-      : [fontHoverColorCss(theme)]),
+    mixins.fontDarkColor(theme),
+    mixins.fontWeightBold(theme),
+    mixins.smallPadding(theme),
+    mixins.pointer(),
+    selected
+      ? mixins.fontPrimaryMainColor(theme)
+      : mixins.fontHoverColor(theme),
   ]}
   width: 100%;
   display: flex;

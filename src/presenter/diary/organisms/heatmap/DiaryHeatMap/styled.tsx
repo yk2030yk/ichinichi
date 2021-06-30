@@ -1,29 +1,23 @@
 import { styled } from '@/styles';
-import {
-  boxBorderCss,
-  boxCss,
-  middlePaddingCss,
-  smallMarginTopCss,
-  fontSmallSizeCss,
-  fontMainSizeCss,
-} from '@/styles/mixins';
+import { mixins } from '@/styles/mixins';
 
 export const HeatMap = styled.div`
-  ${({ theme }) => boxCss(theme)}
-  ${({ theme }) => boxBorderCss(theme)}
-  ${({ theme }) => middlePaddingCss(theme)}
-  ${({ theme }) => fontSmallSizeCss(theme)}
+  ${({ theme }) => mixins.box(theme)}
+  ${({ theme }) => mixins.boxBorder(theme)}
+  ${({ theme }) => mixins.middlePadding(theme)}
+  ${({ theme }) => mixins.fontSmallSize(theme)}
   width: 100%;
+  overflow-x: scroll;
 `;
 
 export const HeatMapTitle = styled.div`
-  ${({ theme }) => fontMainSizeCss(theme)}
+  ${({ theme }) => mixins.fontMainSize(theme)}
 `;
 
 export const HeatMapHeader = styled.div``;
 
 export const HeatMapContent = styled.div`
-  ${({ theme }) => smallMarginTopCss(theme)}
+  ${({ theme }) => mixins.smallMarginTop(theme)}
 `;
 
 export const HeatMapGraph = styled.div`
