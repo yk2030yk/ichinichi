@@ -2,8 +2,7 @@ import { styled } from '@/styles';
 import { mixins } from '@/styles/mixins';
 
 export const Input = styled.input`
-  ${({ theme }) => mixins.input(theme)}
-  width: 100%;
+  ${({ theme }) => [mixins.width100Per(), mixins.input(theme)]}
   font-size: 11px;
 `;
 

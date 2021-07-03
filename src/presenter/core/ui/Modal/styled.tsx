@@ -1,18 +1,13 @@
-import { styled, css, Theme } from '@/styles';
+import { styled } from '@/styles';
 import { mixins } from '@/styles/mixins';
-
-const modalBackGroundColor = (theme: Theme) => css`
-  background-color: ${theme.palette.background?.transparent};
-`;
-
-const modalContentColor = (theme: Theme) => css`
-  background-color: ${theme.palette.background?.main};
-`;
+import { mergeMixins } from '@/styles/utils';
 
 export const Background = styled.div`
-  ${({ theme }) => [modalBackGroundColor(theme)]}
-  width: 100%;
-  height: 100%;
+  ${mergeMixins([
+    mixins.width100Per,
+    mixins.height100Per,
+    mixins.backgroundColorTransparent,
+  ])}
   position: fixed;
   top: 0;
   left: 0;
@@ -22,43 +17,47 @@ export const Background = styled.div`
 `;
 
 export const ModalContent = styled.div`
-  ${({ theme }) => [
-    modalContentColor(theme),
-    mixins.boxBorderRadius(theme),
-    mixins.boxShadow(theme),
-  ]}
-  width: 700px;
-  height: 80%;
-  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  ${mergeMixins([
+    mixins.backgroundColorMain,
+    mixins.boxBorderRadius,
+    mixins.boxShadow,
+  ])}
+  ${[mixins.width(700), mixins.height(500)]}
 `;
 
 export const ModalHeader = styled.div`
-  ${({ theme }) => [mixins.boxBorderBottom(theme), mixins.middlePadding(theme)]}
-  width: 100%;
+  ${mergeMixins([
+    mixins.width100Per,
+    mixins.boxBorderBottom,
+    mixins.middlePadding,
+  ])}
+
   display: flex;
   justify-content: space-between;
   align-items: center;
 `;
 
 export const ModalTitle = styled.p`
-  ${({ theme }) => [mixins.fontMainColor(theme), mixins.fontLargeSize(theme)]}
+  ${mergeMixins([mixins.fontMainColor, mixins.fontLargeSize])}
 `;
 
 export const ModalCloseButton = styled.div`
-  ${({ theme }) => [
-    mixins.fontDarkColor(theme),
-    mixins.fontLargeSize(theme),
-    mixins.fontHoverColor(theme),
-    mixins.pointer(),
-  ]}
+  ${mergeMixins([
+    mixins.fontDarkColor,
+    mixins.fontLargeSize,
+    mixins.fontHoverColor,
+    mixins.pointer,
+  ])}
   display: flex;
   align-items: center;
   justify-content: center;
 `;
 
 export const ModalContentMain = styled.div`
-  ${({ theme }) => [mixins.middlePadding(theme)]}
-  width: 100%;
-  height: 100%;
+  ${mergeMixins([
+    mixins.width100Per,
+    mixins.height100Per,
+    mixins.middlePadding,
+  ])}
   overflow-y: scroll;
 `;

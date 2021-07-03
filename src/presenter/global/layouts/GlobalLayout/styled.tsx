@@ -5,9 +5,9 @@ export const Wrapper = styled.div`
   ${({ theme }) => [
     mixins.backgroundColorMain(theme),
     mixins.fontMainColor(theme),
+    mixins.width100Per(),
+    mixins.height100Per(),
   ]};
-  width: 100%;
-  height: 100%;
   display: flex;
 `;
 
@@ -17,8 +17,7 @@ export const LeftContent = styled.div`
 `;
 
 export const MiddleContent = styled.div`
-  ${({ theme }) => mixins.backgroundColorMain(theme)};
-  width: 100%;
+  ${({ theme }) => [mixins.width100Per(), mixins.backgroundColorMain(theme)]};
 `;
 
 export const RightContent = styled.div`

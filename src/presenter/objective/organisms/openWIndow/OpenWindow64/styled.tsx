@@ -1,4 +1,5 @@
 import { styled } from '@/styles';
+import { mixins } from '@/styles/mixins';
 
 export const Wrapper = styled.div`
   width: 660px;
@@ -14,8 +15,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Cells = styled.div<{ cellOrder: number }>`
-  width: 100%;
-  height: 100%;
+  ${() => [mixins.width100Per(), mixins.height100Per()]}
   display: grid;
   grid-area: ${({ cellOrder }) => `c${cellOrder}`};
   grid-template-areas:
@@ -27,8 +27,6 @@ export const Cells = styled.div<{ cellOrder: number }>`
 `;
 
 export const Cell = styled.div<{ cellColor: string; cellOrder: number }>`
-  width: 100%;
-  height: 100%;
   background-color: ${({ cellColor = '#fff' }) => cellColor};
   font-size: 12px;
   color: #808080;
@@ -36,6 +34,8 @@ export const Cell = styled.div<{ cellColor: string; cellOrder: number }>`
   justify-content: center;
   align-items: center;
   grid-area: ${({ cellOrder }) => `cs${cellOrder}`};
+
+  ${() => [mixins.width100Per(), mixins.height100Per()]}
 
   & > p {
     transform: scale(0.7);

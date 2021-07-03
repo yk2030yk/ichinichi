@@ -3,18 +3,15 @@ import { styled } from '@/styles';
 import { mixins } from '@/styles/mixins';
 
 export const Wrapper = styled.div`
-  ${({ theme }) => mixins.middlePadding(theme)}
-  width: 100%;
+  ${({ theme }) => [mixins.width100Per(), mixins.middlePadding(theme)]}
 `;
 
 export const YearSelect = styled.select`
-  ${({ theme }) => [mixins.input(theme)]}
-  width: 100%;
+  ${({ theme }) => [mixins.width100Per(), mixins.input(theme)]}
 `;
 
 export const MonthList = styled.div`
-  ${({ theme }) => mixins.middleMarginTop(theme)}
-  width: 100%;
+  ${({ theme }) => [mixins.width100Per(), mixins.middleMarginTop(theme)]}
 `;
 
 export const MonthListItem = styled.div<{ selected: boolean }>`
@@ -23,11 +20,11 @@ export const MonthListItem = styled.div<{ selected: boolean }>`
     mixins.fontWeightBold(theme),
     mixins.smallPadding(theme),
     mixins.pointer(),
+    mixins.width100Per(),
     selected
       ? mixins.fontPrimaryMainColor(theme)
       : mixins.fontHoverColor(theme),
   ]}
-  width: 100%;
   display: flex;
   align-items: center;
 `;

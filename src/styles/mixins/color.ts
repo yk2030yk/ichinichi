@@ -11,3 +11,7 @@ export const backgroundColorDark = (theme: Theme) => css`
 export const backgroundColorLight = (theme: Theme) => css`
   background-color: ${theme.palette.background?.light};
 `;
+
+export const backgroundColorTransparent = (theme: Theme) => css`
+  background-color: ${theme.palette.background?.transparent};
+`;

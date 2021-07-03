@@ -2,13 +2,12 @@ import { styled } from '@/styles';
 import { mixins } from '@/styles/mixins';
 
 export const Wrapper = styled.div`
-  width: 100%;
-  ${({ theme }) => [mixins.middlePadding(theme)]}
+  ${({ theme }) => [mixins.width100Per(), mixins.middlePadding(theme)]}
 `;
 
 export const Link = styled.div`
-  width: 100%;
   ${({ theme }) => [
+    mixins.width100Per(),
     mixins.fontHoverColor(theme),
     mixins.smallPadding(theme),
     mixins.pointer(),

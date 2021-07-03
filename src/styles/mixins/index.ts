@@ -12,6 +12,7 @@ import {
   fontWrap,
   fontWeightBold,
   pointer,
+  cursorEWResize,
 } from './font';
 import {
   boxBorder,
@@ -25,6 +26,7 @@ import {
   backgroundColorDark,
   backgroundColorMain,
   backgroundColorLight,
+  backgroundColorTransparent,
 } from './color';
 import {
   smallPadding,
@@ -37,6 +39,17 @@ import {
 } from './space';
 import { flexVerticalCenter } from './flex';
 import { size, position } from './utils';
+import {
+  width,
+  width100Per,
+  maxWidth,
+  minWidth,
+  height,
+  height100Per,
+  height100Vh,
+  maxHeight,
+  minHeight,
+} from './size';
 
 export const mixins = {
   input,
@@ -52,7 +65,9 @@ export const mixins = {
   fontHoverColor,
   fontWrap,
   fontWeightBold,
+
   pointer,
+  cursorEWResize,
 
   boxBorder,
   box,
@@ -64,6 +79,7 @@ export const mixins = {
   backgroundColorDark,
   backgroundColorMain,
   backgroundColorLight,
+  backgroundColorTransparent,
 
   smallPadding,
   middlePadding,
@@ -77,4 +93,14 @@ export const mixins = {
 
   size,
   position,
+
+  width,
+  width100Per,
+  maxWidth,
+  minWidth,
+  height,
+  height100Per,
+  height100Vh,
+  maxHeight,
+  minHeight,
 };

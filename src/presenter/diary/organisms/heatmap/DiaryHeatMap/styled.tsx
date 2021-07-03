@@ -5,8 +5,7 @@ export const HeatMap = styled.div`
   ${({ theme }) => mixins.box(theme)}
   ${({ theme }) => mixins.boxBorder(theme)}
   ${({ theme }) => mixins.middlePadding(theme)}
-  ${({ theme }) => mixins.fontSmallSize(theme)}
-  width: 100%;
+  ${({ theme }) => [mixins.width100Per(), mixins.fontSmallSize(theme)]}
   overflow-x: scroll;
 `;
 

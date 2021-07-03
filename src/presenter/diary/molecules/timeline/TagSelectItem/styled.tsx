@@ -2,11 +2,14 @@ import { styled } from '@/styles';
 import { mixins } from '@/styles/mixins';
 
 export const SelectItem = styled.div`
-  width: 100%;
   padding: 10px;
   display: flex;
   align-items: center;
-  ${({ theme }) => [mixins.pointer(), mixins.boxBorderBottom(theme)]}
+  ${({ theme }) => [
+    mixins.width100Per(),
+    mixins.pointer(),
+    mixins.boxBorderBottom(theme),
+  ]}
 `;
 
 export const TagWrapper = styled.div`

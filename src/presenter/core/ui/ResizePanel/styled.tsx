@@ -1,24 +1,25 @@
 import { styled } from '@/styles';
 import { mixins } from '@/styles/mixins';
+import { mergeMixins } from '@/styles/utils';
 
 export const ResizePanel = styled.div<{ width: number }>`
-  display: flex;
-  width: ${({ width }) => `${width}px`};
-  height: 100%;
+  ${({ width }) => [mixins.width(width)]}
+  ${mergeMixins([mixins.height100Per])}
 `;
 
 export const ResizeContent = styled.div`
-  width: 100%;
-  height: 100%;
+  ${mergeMixins([mixins.width100Per, mixins.height100Per])}
 `;
 
 export const ResizeBar = styled.div<{ isDragging: boolean }>`
-  height: 100%;
-  width: 2px;
-  cursor: ew-resize;
   ${({ theme, isDragging }) => [
-    mixins.backgroundColorMain(theme),
     isDragging && mixins.backgroundColorLight(theme),
-    mixins.boxHover(theme),
   ]}
+  ${mergeMixins([
+    mixins.height100Per,
+    mixins.cursorEWResize,
+    mixins.boxHover,
+    mixins.backgroundColorMain,
+    mixins.width(2),
+  ])}
 `;

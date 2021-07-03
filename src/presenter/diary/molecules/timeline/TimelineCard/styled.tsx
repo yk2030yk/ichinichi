@@ -3,14 +3,16 @@ import { mixins } from '@/styles/mixins';
 
 export const CardWrapper = styled.div`
   ${({ theme }) => mixins.boxBorderBottom(theme)}
-  ${({ theme }) => mixins.middlePadding(theme)}
-  width: 100%;
+  ${({ theme }) => [
+    mixins.width100Per(),
+    mixins.middlePadding(theme),
+  ]}
   padding-left: 0;
   padding-right: 0;
 `;
 
 export const Card = styled.div`
-  width: 100%;
+  ${() => [mixins.width100Per()]}
 `;
 
 export const CardHeader = styled.div`
@@ -33,6 +35,5 @@ export const CardTopIconWrapper = styled.div`
 export const CardDate = styled.p``;
 
 export const CardContent = styled.div`
-  ${({ theme }) => mixins.smallMarginTop(theme)}
-  width: 100%;
+  ${({ theme }) => [mixins.width100Per(), mixins.smallMarginTop(theme)]}
 `;

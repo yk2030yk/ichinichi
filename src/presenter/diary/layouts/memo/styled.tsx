@@ -2,15 +2,13 @@ import { styled } from '@/styles';
 import { mixins } from '@/styles/mixins';
 
 export const ContentWrapper = styled.div`
-  ${({ theme }) => [mixins.middlePadding(theme)]}
-  width: 100%;
+  ${({ theme }) => [mixins.width100Per(), mixins.middlePadding(theme)]}
 `;
 
 export const ContentTop = styled.div`
-  width: 100%;
+  ${() => [mixins.width100Per()]}
 `;
 
 export const ContentMiddle = styled.div`
-  width: 100%;
-  ${({ theme }) => [mixins.middleMarginTop(theme)]}
+  ${({ theme }) => [mixins.width100Per(), mixins.middleMarginTop(theme)]}
 `;

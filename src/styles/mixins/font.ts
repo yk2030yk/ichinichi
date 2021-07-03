@@ -50,3 +50,7 @@ export const fontWeightBold = (theme: Theme) => css`
 export const pointer = () => css`
   cursor: pointer;
 `;
+
+export const cursorEWResize = () => css`
+  cursor: pointer;
+`;
