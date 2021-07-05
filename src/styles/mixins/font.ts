@@ -1,16 +1,16 @@
 import { css, Theme } from '@/styles';
 
-export const fontLargeSize = (theme: Theme) => css`
+export const fontLargeSize = () => css`
   font-size: 14px;
   font-weight: 600;
 `;
 
-export const fontMainSize = (theme: Theme) => css`
+export const fontMainSize = () => css`
   font-size: 12px;
   font-weight: 300;
 `;
 
-export const fontSmallSize = (theme: Theme) => css`
+export const fontSmallSize = () => css`
   font-size: 12px;
   font-weight: 300;
 `;
@@ -43,7 +43,7 @@ export const fontWrap = () => css`
   white-space: pre-wrap;
 `;
 
-export const fontWeightBold = (theme: Theme) => css`
+export const fontWeightBold = () => css`
   font-weight: 600;
 `;
 
