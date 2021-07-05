@@ -5,6 +5,7 @@ import { mergeMixins } from '@/styles/utils';
 export const ResizePanel = styled.div<{ width: number }>`
   ${({ width }) => [mixins.width(width)]}
   ${mergeMixins([mixins.height100Per])}
+  display: flex;
 `;
 
 export const ResizeContent = styled.div`
@@ -12,9 +13,6 @@ export const ResizeContent = styled.div`
 `;
 
 export const ResizeBar = styled.div<{ isDragging: boolean }>`
-  ${({ theme, isDragging }) => [
-    isDragging && mixins.backgroundColorLight(theme),
-  ]}
   ${mergeMixins([
     mixins.height100Per,
     mixins.cursorEWResize,
@@ -22,4 +20,7 @@ export const ResizeBar = styled.div<{ isDragging: boolean }>`
     mixins.backgroundColorMain,
     mixins.width(2),
   ])}
+  ${({ theme, isDragging }) => [
+    isDragging && mixins.backgroundColorLight(theme),
+  ]}
 `;

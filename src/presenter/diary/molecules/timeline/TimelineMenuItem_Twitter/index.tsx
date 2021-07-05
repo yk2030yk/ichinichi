@@ -9,8 +9,7 @@ type Props = {
 
 export const TimelineMenuItem_Twitter: React.FC<Props> = ({ onClickMenu }) => {
   return (
-    <TimelineMenuItem onClick={onClickMenu}>
-      <TwitterIcon size={20} />
+    <TimelineMenuItem onClick={onClickMenu} icon={<TwitterIcon size={20} />}>
       <p>Tweet</p>
     </TimelineMenuItem>
   );

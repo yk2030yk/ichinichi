@@ -31,7 +31,7 @@ export const TimelineEditor_Tag: React.FC<Props> = ({ tags, setTags }) => {
   return (
     <div>
       <S.TagLayoutWrapper onClick={open}>
-        <DiaryTagList tags={tags} />
+        <DiaryTagList tags={tags} showEmptyMessage />
       </S.TagLayoutWrapper>
       <Popup isOpen={isOpen} close={close}>
         <S.Wrapper>

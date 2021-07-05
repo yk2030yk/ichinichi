@@ -40,8 +40,8 @@ export const TimelineMenuItem_Slack: React.FC<Props> = ({
         sendSlack(content);
         onClickMenu(e);
       }}
+      icon={<SlackIcon size={20} />}
     >
-      <SlackIcon size={20} />
       <p>Send Slack Channel</p>
     </TimelineMenuItem>
   );

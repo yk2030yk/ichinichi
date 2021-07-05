@@ -6,7 +6,6 @@ export const Wrapper = styled.div`
     mixins.backgroundColorMain(theme),
     mixins.fontMainColor(theme),
     mixins.width100Per(),
-    mixins.height100Per(),
   ]};
   display: flex;
 `;
@@ -23,4 +22,5 @@ export const MiddleContent = styled.div`
 export const RightContent = styled.div`
   ${({ theme }) => mixins.backgroundColorMain(theme)};
   overflow-y: scroll;
+  flex-grow: 2;
 `;
