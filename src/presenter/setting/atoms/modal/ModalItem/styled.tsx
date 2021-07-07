@@ -1,18 +1,19 @@
 import { styled } from '@/styles';
 import { mixins } from '@/styles/mixins';
+import { mergeMixins } from '@/styles/utils';
 
 export const ModalItem = styled.div`
-  ${({ theme }) => [mixins.middlePadding(theme), mixins.boxBorderBottom(theme)]}
+  ${mergeMixins([mixins.middlePadding, mixins.boxBorderBottom])}
 `;
 
 export const ModalItemContent = styled.div`
-  ${({ theme }) => mixins.middleMarginTop(theme)}
+  ${mergeMixins([mixins.middleMarginTop])}
 `;
 
 export const ModalItemTitle = styled.div`
-  ${({ theme }) => [
-    mixins.fontMainColor(theme),
-    mixins.fontMainSize(theme),
-    mixins.fontWeightBold(theme),
-  ]}
+  ${mergeMixins([
+    mixins.fontMainColor,
+    mixins.fontMainSize,
+    mixins.fontWeightBold,
+  ])}
 `;

@@ -6,5 +6,5 @@ export const Wrapper = styled.div`
 `;
 
 export const TagListArea = styled.div`
-  ${({ theme }) => [mixins.middleMarginTop(theme)]}
+  ${({ theme }) => [mixins.middleMarginTop({ theme })]}
 `;

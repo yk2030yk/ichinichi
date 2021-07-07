@@ -2,10 +2,10 @@ import { styled } from '@/styles';
 import { mixins } from '@/styles/mixins';
 
 export const CardWrapper = styled.div`
-  ${({ theme }) => mixins.boxBorderBottom(theme)}
+  ${({ theme }) => mixins.boxBorderBottom({ theme })}
   ${({ theme }) => [
     mixins.width100Per(),
-    mixins.middlePadding(theme),
+    mixins.middlePadding({ theme }),
   ]}
   padding-left: 0;
   padding-right: 0;
@@ -27,7 +27,7 @@ export const CardTopIconArea = styled.div`
 `;
 
 export const CardTopIconWrapper = styled.div`
-  ${({ theme }) => mixins.fontHoverColor(theme)}
+  ${({ theme }) => mixins.fontHoverColor({ theme })}
   cursor: pointer;
   padding: 3px;
 `;
@@ -35,5 +35,5 @@ export const CardTopIconWrapper = styled.div`
 export const CardDate = styled.p``;
 
 export const CardContent = styled.div`
-  ${({ theme }) => [mixins.width100Per(), mixins.smallMarginTop(theme)]}
+  ${({ theme }) => [mixins.width100Per(), mixins.smallMarginTop({ theme })]}
 `;

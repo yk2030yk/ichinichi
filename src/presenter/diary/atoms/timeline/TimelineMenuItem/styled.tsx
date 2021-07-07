@@ -5,10 +5,10 @@ import { mergeMixins } from '@/styles/utils';
 
 export const Item = styled.div`
   ${({ theme }) => [
-    mixins.smallPadding(theme),
-    mixins.fontMainColor(theme),
+    mixins.smallPadding({ theme }),
+    mixins.fontMainColor({ theme }),
     mixins.pointer(),
-    mixins.fontHoverColor(theme),
+    mixins.fontHoverColor({ theme }),
   ]}
   display: flex;
   align-items: center;

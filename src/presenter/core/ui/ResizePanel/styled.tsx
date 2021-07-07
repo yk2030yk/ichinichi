@@ -6,6 +6,7 @@ export const ResizePanel = styled.div<{ width: number }>`
   ${({ width }) => [mixins.width(width)]}
   ${mergeMixins([mixins.height100Per])}
   display: flex;
+  align-items: stretch;
 `;
 
 export const ResizeContent = styled.div`
@@ -21,6 +22,6 @@ export const ResizeBar = styled.div<{ isDragging: boolean }>`
     mixins.width(2),
   ])}
   ${({ theme, isDragging }) => [
-    isDragging && mixins.backgroundColorLight(theme),
+    isDragging && mixins.backgroundColorLight({ theme }),
   ]}
 `;

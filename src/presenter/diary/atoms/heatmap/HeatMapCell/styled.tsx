@@ -45,6 +45,6 @@ export const Col = styled.div<{
   ${({ theme, textCount, isToday, hasDate, size = '11px' }) => [
     mixins.size({ w: size, h: size }),
     cellColor({ theme, textCount, isToday, hasDate }),
-    mixins.boxBorderRadius(theme),
+    mixins.boxBorderRadius({ theme }),
   ]}
 `;

@@ -3,8 +3,8 @@ import { mixins } from '@/styles/mixins';
 
 export const Tag = styled.div<{ color?: string; editable: boolean }>`
   ${({ theme, editable }) => [
-    mixins.smallPadding(theme),
-    mixins.boxBorderRadius(theme),
+    mixins.smallPadding({ theme }),
+    mixins.boxBorderRadius({ theme }),
     editable && mixins.pointer(),
   ]}
   display: grid;

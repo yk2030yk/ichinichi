@@ -5,7 +5,7 @@ export const TimelineEditor = styled.div``;
 
 export const TimelineEditorItem = styled.div`
   ${({ theme }) => [
-    mixins.smallMarginTop(theme),
+    mixins.smallMarginTop({ theme }),
     mixins.resetFirstItemMargin(),
   ]}
 `;

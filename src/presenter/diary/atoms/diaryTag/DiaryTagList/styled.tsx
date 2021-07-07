@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
 
 export const TagWrapper = styled.div`
   ${({ theme }) => [
-    mixins.smallMarginLeft(theme),
+    mixins.smallMarginLeft({ theme }),
     mixins.resetFirstItemMargin(),
   ]}
 `;

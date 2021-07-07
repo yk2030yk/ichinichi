@@ -1,12 +1,13 @@
-import { styled } from '@/styles';
+import { css } from '@/styles';
 import { mixins } from '@/styles/mixins';
+import { styledDiv } from '@/styles/utils';
 
-export const Wrapper = styled.div`
-  ${({ theme }) => [mixins.width100Per(), mixins.smallPadding(theme)]}
-`;
+export const Wrapper = styledDiv([mixins.width100Per, mixins.smallPadding]);
 
-export const MenuItem = styled.div`
-  ${() => [mixins.width100Per()]}
-  display: flex;
-  justify-content: center;
-`;
+export const MenuItem = styledDiv([
+  mixins.width100Per,
+  css`
+    display: flex;
+    justify-content: center;
+  `,
+]);

@@ -1,12 +1,15 @@
-import { styled, Theme, css } from '@/styles';
+import { Theme, css } from '@/styles';
 import { mixins } from '@/styles/mixins';
+import { styledDiv } from '@/styles/utils';
 
-export const Themes = styled.div`
-  margin-top: 10px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
-`;
+export const Themes = styledDiv([
+  css`
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+  `,
+]);
 
 const item = (
   theme: Theme,
@@ -15,8 +18,8 @@ const item = (
   color: string
 ) => css`
   ${[
-    mixins.middlePadding(theme),
-    mixins.boxBorderRadius(theme),
+    mixins.middlePadding({ theme }),
+    mixins.boxBorderRadius({ theme }),
     mixins.pointer(),
   ]}
   background-color: ${backgroundColor};
@@ -24,10 +27,10 @@ const item = (
   border: solid 2px ${selected ? theme.palette.primary?.main : backgroundColor};
 `;
 
-export const LightThemeItem = styled.div<{ selected: boolean }>`
-  ${({ theme, selected }) => [item(theme, selected, '#fff', '#000')]}
-`;
+export const LightThemeItem = styledDiv<{ selected: boolean }>([
+  ({ theme, selected }) => item(theme, selected, '#fff', '#000'),
+]);
 
-export const DarkThemeItem = styled.div<{ selected: boolean }>`
-  ${({ theme, selected }) => [item(theme, selected, '#000', '#fff')]}
-`;
+export const DarkThemeItem = styledDiv<{ selected: boolean }>([
+  ({ theme, selected }) => item(theme, selected, '#000', '#fff'),
+]);

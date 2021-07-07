@@ -1,6 +1,7 @@
 import { SnackbarType } from '@/presenter/global/state/snackbar';
-import { styled, Theme, css } from '@/styles';
+import { Theme, css } from '@/styles';
 import { mixins } from '@/styles/mixins';
+import { styledDiv } from '@/styles/utils';
 
 const getPaletteBySnackbarType = (theme: Theme, snackbarType: SnackbarType) => {
   switch (snackbarType) {
@@ -23,33 +24,35 @@ const snackbarStyle = (theme: Theme, snackbarType: SnackbarType) => {
   `;
 };
 
-export const Snackbar = styled.div<{ snackbarType: SnackbarType }>`
-  ${({ theme, snackbarType }) => [
-    snackbarStyle(theme, snackbarType),
-    mixins.fontSmallSize(theme),
-    mixins.smallPadding(theme),
-    mixins.boxShadow(theme),
-    mixins.boxBorderRadius(theme),
-    mixins.size({ w: '250px' }),
-    mixins.position({ b: '30px', l: '50%' }),
-  ]}
-  position: fixed;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-`;
+export const Snackbar = styledDiv<{ snackbarType: SnackbarType }>([
+  ({ theme, snackbarType }) => snackbarStyle(theme, snackbarType),
+  mixins.fontSmallSize,
+  mixins.smallPadding,
+  mixins.boxShadow,
+  mixins.boxBorderRadius,
+  mixins.size({ w: '250px' }),
+  mixins.position({ b: '30px', l: '50%' }),
+  css`
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  `,
+]);
 
-export const SnackbarLeft = styled.div`
-  display: flex;
-  align-items: center;
-`;
+export const SnackbarLeft = styledDiv([
+  css`
+    display: flex;
+    align-items: center;
+  `,
+]);
 
-export const SnackbarRight = styled.div`
-  ${() => mixins.pointer()}
-  display: flex;
-  align-items: center;
-`;
+export const SnackbarRight = styledDiv([
+  mixins.pointer,
+  css`
+    display: flex;
+    align-items: center;
+  `,
+]);
 
-export const Message = styled.div`
-  ${({ theme }) => mixins.smallMarginLeft(theme)}
-`;
+export const Message = styledDiv([mixins.smallMarginLeft]);

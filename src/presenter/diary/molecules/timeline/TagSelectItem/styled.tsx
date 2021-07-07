@@ -8,12 +8,12 @@ export const SelectItem = styled.div`
   ${({ theme }) => [
     mixins.width100Per(),
     mixins.pointer(),
-    mixins.boxBorderBottom(theme),
+    mixins.boxBorderBottom({ theme }),
   ]}
 `;
 
 export const TagWrapper = styled.div`
-  ${({ theme }) => [mixins.smallMarginLeft(theme)]}
+  ${({ theme }) => [mixins.smallMarginLeft({ theme })]}
 `;
 
 export const CheckIconWrapper = styled.div`

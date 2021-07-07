@@ -1,17 +1,17 @@
-import { css, Theme } from '@/styles';
+import { css, Props } from '@/styles';
 
-export const backgroundColorMain = (theme: Theme) => css`
+export const backgroundColorMain = ({ theme }: Props) => css`
   background-color: ${theme.palette.background?.main};
 `;
 
-export const backgroundColorDark = (theme: Theme) => css`
+export const backgroundColorDark = ({ theme }: Props) => css`
   background-color: ${theme.palette.background?.dark};
 `;
 
-export const backgroundColorLight = (theme: Theme) => css`
+export const backgroundColorLight = ({ theme }: Props) => css`
   background-color: ${theme.palette.background?.light};
 `;
 
-export const backgroundColorTransparent = (theme: Theme) => css`
+export const backgroundColorTransparent = ({ theme }: Props) => css`
   background-color: ${theme.palette.background?.transparent};
 `;

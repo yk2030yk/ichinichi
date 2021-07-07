@@ -1,26 +1,26 @@
-import { css, Theme } from '@/styles';
+import { css, Props } from '@/styles';
 
-export const smallPadding = (theme: Theme) => css`
+export const smallPadding = ({ theme }: Props) => css`
   padding: ${theme.space.small}px;
 `;
 
-export const middlePadding = (theme: Theme) => css`
+export const middlePadding = ({ theme }: Props) => css`
   padding: ${theme.space.middle}px;
 `;
 
-export const smallMarginLeft = (theme: Theme) => css`
+export const smallMarginLeft = ({ theme }: Props) => css`
   margin-left: ${theme.space.small}px;
 `;
 
-export const middleMarginLeft = (theme: Theme) => css`
+export const middleMarginLeft = ({ theme }: Props) => css`
   margin-left: ${theme.space.middle}px;
 `;
 
-export const smallMarginTop = (theme: Theme) => css`
+export const smallMarginTop = ({ theme }: Props) => css`
   margin-top: ${theme.space.small}px;
 `;
 
-export const middleMarginTop = (theme: Theme) => css`
+export const middleMarginTop = ({ theme }: Props) => css`
   margin-top: ${theme.space.middle}px;
 `;
 

@@ -6,7 +6,7 @@ export const MonthTimeline = styled.div`
 `;
 
 export const MonthTimelineTitle = styled.div`
-  ${({ theme }) => [mixins.width100Per(), mixins.fontLargeSize(theme)]}
+  ${[mixins.width100Per(), mixins.fontLargeSize()]}
 `;
 
 export const TimelineCardList = styled.div`

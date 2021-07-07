@@ -1,17 +1,17 @@
-import { styled } from '@/styles';
+import { css } from '@/styles';
 import { mixins } from '@/styles/mixins';
+import { styledDiv } from '@/styles/utils';
 
-export const Cell = styled.div<{ selected: boolean }>`
-  ${({ theme, selected }) => {
-    const size = '40px';
-    return [
-      mixins.size({ w: size, h: size }),
-      mixins.fontDarkColor(theme),
-      selected ? mixins.fontLightColor(theme) : mixins.fontHoverColor(theme),
-      mixins.pointer(),
-    ];
-  }}
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
+const size = '40px';
+export const Cell = styledDiv<{ selected: boolean }>([
+  mixins.size({ w: size, h: size }),
+  mixins.fontDarkColor,
+  ({ selected, ...props }) =>
+    selected ? mixins.fontLightColor(props) : mixins.fontHoverColor(props),
+  mixins.pointer(),
+  css`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  `,
+]);

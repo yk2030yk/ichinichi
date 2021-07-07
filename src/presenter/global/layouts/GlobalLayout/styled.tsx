@@ -1,26 +1,36 @@
-import { styled } from '@/styles';
+import { css } from '@/styles';
 import { mixins } from '@/styles/mixins';
+import { styledDiv } from '@/styles/utils';
 
-export const Wrapper = styled.div`
-  ${({ theme }) => [
-    mixins.backgroundColorMain(theme),
-    mixins.fontMainColor(theme),
-    mixins.width100Per(),
-  ]};
-  display: flex;
-`;
+export const Wrapper = styledDiv([
+  mixins.backgroundColorMain,
+  mixins.fontMainColor,
+  mixins.width100Per,
+  mixins.height100Vh,
+  css`
+    display: flex;
+  `,
+]);
 
-export const LeftContent = styled.div`
-  ${({ theme }) => mixins.backgroundColorDark(theme)};
-  width: 50px;
-`;
+export const LeftContent = styledDiv([
+  mixins.backgroundColorDark,
+  mixins.height100Per,
+  mixins.width100Per,
+  mixins.height100Vh,
+  css`
+    width: 50px;
+  `,
+]);
 
-export const MiddleContent = styled.div`
-  ${({ theme }) => [mixins.width100Per(), mixins.backgroundColorMain(theme)]};
-`;
+export const MiddleContent = styledDiv([
+  mixins.width100Per,
+  mixins.backgroundColorMain,
+]);
 
-export const RightContent = styled.div`
-  ${({ theme }) => mixins.backgroundColorMain(theme)};
-  overflow-y: scroll;
-  flex-grow: 2;
-`;
+export const RightContent = styledDiv([
+  mixins.backgroundColorMain,
+  css`
+    overflow-y: scroll;
+    flex-grow: 2;
+  `,
+]);

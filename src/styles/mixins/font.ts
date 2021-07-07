@@ -1,4 +1,4 @@
-import { css, Theme } from '@/styles';
+import { css, Props } from '@/styles';
 
 export const fontLargeSize = () => css`
   font-size: 14px;
@@ -15,23 +15,23 @@ export const fontSmallSize = () => css`
   font-weight: 300;
 `;
 
-export const fontPrimaryMainColor = (theme: Theme) => css`
+export const fontPrimaryMainColor = ({ theme }: Props) => css`
   color: ${theme.palette.primary?.main};
 `;
 
-export const fontMainColor = (theme: Theme) => css`
+export const fontMainColor = ({ theme }: Props) => css`
   color: ${theme.palette.text.main};
 `;
 
-export const fontDarkColor = (theme: Theme) => css`
+export const fontDarkColor = ({ theme }: Props) => css`
   color: ${theme.palette.text.dark};
 `;
 
-export const fontLightColor = (theme: Theme) => css`
+export const fontLightColor = ({ theme }: Props) => css`
   color: ${theme.palette.text.light};
 `;
 
-export const fontHoverColor = (theme: Theme) => css`
+export const fontHoverColor = ({ theme }: Props) => css`
   transition: color 0.3s;
   &:hover {
     color: ${theme.palette.text.light};
@@ -52,5 +52,5 @@ export const pointer = () => css`
 `;
 
 export const cursorEWResize = () => css`
-  cursor: pointer;
+  cursor: ew-resize;
 `;

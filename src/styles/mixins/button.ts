@@ -1,4 +1,4 @@
-import { css, Theme } from '@/styles';
+import { css, Props, Theme } from '@/styles';
 import { PaletteColor } from '@emotion/react';
 
 const createButton = (theme: Theme, paletteColor?: PaletteColor) => css`
@@ -22,8 +22,8 @@ const createButton = (theme: Theme, paletteColor?: PaletteColor) => css`
   }
 `;
 
-export const okButton = (theme: Theme) =>
+export const okButton = ({ theme }: Props) =>
   createButton(theme, theme.palette.primary);
 
-export const cancelButton = (theme: Theme) =>
+export const cancelButton = ({ theme }: Props) =>
   createButton(theme, theme.palette.background);
