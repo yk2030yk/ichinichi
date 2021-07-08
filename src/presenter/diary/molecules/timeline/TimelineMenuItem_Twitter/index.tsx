@@ -18,7 +18,7 @@ const useSendTwitter = (date: string) => {
   const openSnackbar = useOpenSnackbar('WARNING');
 
   return async () => {
-    loggerUseCase.debug(`send twitter content: ${diaryEntry.content}`);
+    loggerUseCase.info(`send twitter content: \n${diaryEntry.content}`);
     openSnackbar('Twitter送信は実装されていません。');
   };
 };
