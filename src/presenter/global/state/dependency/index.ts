@@ -9,3 +9,4 @@ export { objectiveUseCaseSelector } from './objective';
 export { routeUseCaseSelector } from './route';
 export { settingUseCaseSelector } from './setting';
 export { themeUseCaseSelector } from './theme';
+export { slackUseCaseSelector } from './slack';

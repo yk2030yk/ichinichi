@@ -1,10 +1,10 @@
 import React from 'react';
 import { useRecoilValue } from 'recoil';
-import { IncomingWebhook } from '@slack/webhook';
 
 import { SlackIcon } from '@/presenter/core/atoms/icons';
 import { slackWebhookUrlAtom } from '@/presenter/global/state/setting';
 import { useOpenSnackbar } from '@/presenter/global/hooks/snackbar';
+import { useSlackUseCase } from '@/presenter/global/hooks/dependency/slack';
 import { TimelineMenuItem } from '../../../atoms/timeline/TimelineMenuItem';
 
 type Props = {
@@ -14,14 +14,13 @@ type Props = {
 
 const useSendSlack = () => {
   const url = useRecoilValue(slackWebhookUrlAtom);
+  const slackUseCase = useSlackUseCase();
   const openSnackbar = useOpenSnackbar('ERROR');
-  const webhook = new IncomingWebhook(url);
 
-  return async (text: string) => {
+  return async (message: string) => {
     try {
-      await webhook.send({
-        text,
-      });
+      if (!url) return;
+      await slackUseCase.sendDiaryTimeLine(url, message);
     } catch (e) {
       openSnackbar('Slack通知に失敗しました');
     }

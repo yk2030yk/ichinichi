@@ -8,8 +8,10 @@ const usePopup = (positionType: PopupPositionType) => {
   const ref = useRef<HTMLDivElement>(null);
 
   const getPosition = () => {
-    const top = ref.current?.offsetTop || 0;
-    const left = ref.current?.offsetLeft || 0;
+    const clientRect = ref.current?.getBoundingClientRect();
+
+    const top = clientRect?.top || 0;
+    const left = clientRect?.left || 0;
 
     switch (positionType) {
       case 'left':
