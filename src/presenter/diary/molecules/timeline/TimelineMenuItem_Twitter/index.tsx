@@ -4,6 +4,7 @@ import { useRecoilValue } from 'recoil';
 import { TwitterIcon } from '@/presenter/core/atoms/icons';
 import { useOpenSnackbar } from '@/presenter/global/hooks/snackbar';
 import { diaryEntrySelector } from '@/presenter/diary/state/diary';
+import { useLoggerUseCase } from '@/presenter/global/hooks/dependency/logger';
 import { TimelineMenuItem } from '../../../atoms/timeline/TimelineMenuItem';
 
 type Props = {
@@ -12,11 +13,12 @@ type Props = {
 };
 
 const useSendTwitter = (date: string) => {
+  const loggerUseCase = useLoggerUseCase();
   const diaryEntry = useRecoilValue(diaryEntrySelector(date));
   const openSnackbar = useOpenSnackbar('WARNING');
 
   return async () => {
-    console.log(`send twitter content: ${diaryEntry.content}`);
+    loggerUseCase.debug(`send twitter content: ${diaryEntry.content}`);
     openSnackbar('Twitter送信は実装されていません。');
   };
 };

@@ -1,19 +1,20 @@
+/* eslint-disable no-console */
 import { ILoggerUseCase } from '@/useCase/interfaces/useCases/logger';
 
-class LoggerUseCase implements ILoggerUseCase {
+export class LoggerUseCase implements ILoggerUseCase {
   debug(message: string) {
-    console.log(message);
+    console.debug(message);
   }
 
   warn(message: string) {
-    console.log(message);
+    console.warn(message);
   }
 
   error(message: string) {
-    console.log(message);
+    console.error(message);
   }
 
   info(message: string) {
-    console.log(message);
+    console.info(message);
   }
 }
