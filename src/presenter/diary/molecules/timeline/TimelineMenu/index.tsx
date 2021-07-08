@@ -27,7 +27,10 @@ export const TimelineMenu: React.FC<Props> = ({ date, isOpen, close }) => {
           onClickMenu={onClickMenuItem}
           content={memo.content}
         />
-        <TimelineMenuItem_Twitter onClickMenu={onClickMenuItem} />
+        <TimelineMenuItem_Twitter
+          onClickMenu={onClickMenuItem}
+          content={memo.content}
+        />
       </>
     </Popup>
   );

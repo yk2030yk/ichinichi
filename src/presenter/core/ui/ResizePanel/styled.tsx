@@ -19,7 +19,7 @@ export const ResizeBar = styled.div<{ isDragging: boolean }>`
     mixins.cursorEWResize,
     mixins.boxHover,
     mixins.backgroundColorMain,
-    mixins.width(2),
+    mixins.width(4),
   ])}
   ${({ theme, isDragging }) => [
     isDragging && mixins.backgroundColorLight({ theme }),

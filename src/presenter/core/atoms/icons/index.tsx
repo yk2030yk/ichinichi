@@ -7,6 +7,7 @@ import {
   AiOutlineInfoCircle,
   AiOutlineCheckCircle,
   AiFillTag,
+  AiOutlineWarning,
 } from 'react-icons/ai';
 import { RiTodoFill } from 'react-icons/ri';
 import { FiSettings } from 'react-icons/fi';
@@ -24,4 +25,5 @@ export const CheckIcon = AiOutlineCheckCircle;
 export const TodoIcon = RiTodoFill;
 export const SettingIcon = FiSettings;
 export const ErrorIcon = BiErrorCircle;
+export const WarningIcon = AiOutlineWarning;
 export const TagIcon = AiFillTag;

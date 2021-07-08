@@ -1,6 +1,6 @@
 import { atomFamily } from 'recoil';
 
-export type SnackbarType = 'INFO' | 'ERROR' | 'SUCCESS';
+export type SnackbarType = 'INFO' | 'WARNING' | 'ERROR' | 'SUCCESS';
 
 export const snackbarStateAtom = atomFamily<boolean, SnackbarType>({
   key: 'global/snackbar/atom/snackbarState',

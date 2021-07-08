@@ -22,7 +22,7 @@ export const MonthListItem = styled.div<{ selected: boolean }>`
     mixins.pointer(),
     mixins.width100Per(),
     selected
-      ? mixins.fontPrimaryMainColor({ theme })
+      ? mixins.fontLightColor({ theme })
       : mixins.fontHoverColor({ theme }),
   ]}
   display: flex;

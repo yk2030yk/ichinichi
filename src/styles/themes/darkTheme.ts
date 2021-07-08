@@ -26,10 +26,10 @@ export const darkTheme: Theme = {
       text: '#fff',
     },
     warning: {
-      light: '#',
-      main: '#',
-      dark: '#',
-      text: '#',
+      light: '#e4ce74',
+      main: '#FFCC00',
+      dark: '#a79756',
+      text: '#fff',
     },
     info: {
       light: '#64b5f6',
@@ -46,6 +46,7 @@ export const darkTheme: Theme = {
     background: {
       light: '#55586b',
       main: '#393b48',
+      sub: '#2f303a',
       dark: '#292a33',
       text: '#d6d6d6',
       transparent: '#19191bbf',

@@ -5,6 +5,7 @@ import {
   useApplicationThemeType,
 } from '@/presenter/global/hooks/theme';
 import { THEME_TYPE } from '@/domain/domainModels/theme';
+import { RadioButton } from '@/presenter/core/ui/RadioButton';
 import { ModalItem } from '../../../atoms/modal/ModalItem';
 import * as S from './styled';
 
@@ -12,21 +13,22 @@ export const ModalItem_Theme: React.FC = () => {
   const changeTheme = useChangeApplicationThemeType();
   const themeType = useApplicationThemeType();
 
+  const modes = [
+    { type: THEME_TYPE.DARK, label: 'ダークモード' },
+    { type: THEME_TYPE.LIGHT, label: 'ライトモード' },
+  ];
+
   return (
     <ModalItem title="テーマ選択">
       <S.Themes>
-        <S.DarkThemeItem
-          selected={themeType === THEME_TYPE.DARK}
-          onClick={() => changeTheme(THEME_TYPE.DARK)}
-        >
-          ダークモード
-        </S.DarkThemeItem>
-        <S.LightThemeItem
-          selected={themeType === THEME_TYPE.LIGHT}
-          onClick={() => changeTheme(THEME_TYPE.LIGHT)}
-        >
-          ライトモード
-        </S.LightThemeItem>
+        {modes.map((mode) => (
+          <RadioButton
+            key={mode.type}
+            checked={themeType === mode.type}
+            onClick={() => changeTheme(mode.type)}
+            label={mode.label}
+          />
+        ))}
       </S.Themes>
     </ModalItem>
   );

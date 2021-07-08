@@ -10,6 +10,7 @@ declare module '@emotion/react' {
   type PaletteColor = {
     light: string;
     main: string;
+    sub?: string;
     dark: string;
     text: string;
   };

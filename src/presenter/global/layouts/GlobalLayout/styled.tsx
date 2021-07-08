@@ -24,7 +24,7 @@ export const LeftContent = styledDiv([
 
 export const MiddleContent = styledDiv([
   mixins.width100Per,
-  mixins.backgroundColorMain,
+  mixins.backgroundColorSub,
 ]);
 
 export const RightContent = styledDiv([

@@ -25,6 +25,7 @@ import {
 import {
   backgroundColorDark,
   backgroundColorMain,
+  backgroundColorSub,
   backgroundColorLight,
   backgroundColorTransparent,
 } from './color';
@@ -78,6 +79,7 @@ export const mixins = {
 
   backgroundColorDark,
   backgroundColorMain,
+  backgroundColorSub,
   backgroundColorLight,
   backgroundColorTransparent,
 

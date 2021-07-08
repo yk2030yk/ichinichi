@@ -11,6 +11,8 @@ const getPaletteBySnackbarType = (theme: Theme, snackbarType: SnackbarType) => {
       return theme.palette.error;
     case 'SUCCESS':
       return theme.palette.success;
+    case 'WARNING':
+      return theme.palette.warning;
     default:
       return theme.palette.primary;
   }

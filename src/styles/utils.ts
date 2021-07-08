@@ -37,5 +37,6 @@ export const styledElement = (elementType: StyledElements) => <
 ) => createStyledElement(elementType, styles);
 
 export const styledDiv = styledElement('div');
+export const styledP = styledElement('p');
 export const styledInput = styledElement('input');
 export const styledButton = styledElement('button');
