@@ -5,22 +5,24 @@ import { SlackIcon } from '@/presenter/core/atoms/icons';
 import { slackWebhookUrlAtom } from '@/presenter/global/state/setting';
 import { useOpenSnackbar } from '@/presenter/global/hooks/snackbar';
 import { useSlackUseCase } from '@/presenter/global/hooks/dependency/slack';
+import { diaryEntrySelector } from '@/presenter/diary/state/diary';
 import { TimelineMenuItem } from '../../../atoms/timeline/TimelineMenuItem';
 
 type Props = {
-  content: string;
+  date: string;
   onClickMenu: (e: React.MouseEvent) => void;
 };
 
-const useSendSlack = () => {
+const useSendSlack = (date: string) => {
+  const diaryEntry = useRecoilValue(diaryEntrySelector(date));
   const url = useRecoilValue(slackWebhookUrlAtom);
   const slackUseCase = useSlackUseCase();
   const openSnackbar = useOpenSnackbar('ERROR');
 
-  return async (message: string) => {
+  return async () => {
     try {
       if (!url) return;
-      await slackUseCase.sendDiaryTimeLine(url, message);
+      await slackUseCase.sendDiaryTimeLine(url, diaryEntry.content);
     } catch (e) {
       openSnackbar('Slack通知に失敗しました');
     }
@@ -28,15 +30,15 @@ const useSendSlack = () => {
 };
 
 export const TimelineMenuItem_Slack: React.FC<Props> = ({
-  content,
+  date,
   onClickMenu,
 }) => {
-  const sendSlack = useSendSlack();
+  const sendSlack = useSendSlack(date);
 
   return (
     <TimelineMenuItem
       onClick={(e: React.MouseEvent) => {
-        sendSlack(content);
+        sendSlack();
         onClickMenu(e);
       }}
       icon={<SlackIcon size={20} />}

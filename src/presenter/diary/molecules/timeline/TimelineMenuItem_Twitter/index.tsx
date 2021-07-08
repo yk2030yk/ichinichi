@@ -1,33 +1,36 @@
 import React from 'react';
+import { useRecoilValue } from 'recoil';
 
 import { TwitterIcon } from '@/presenter/core/atoms/icons';
 import { useOpenSnackbar } from '@/presenter/global/hooks/snackbar';
+import { diaryEntrySelector } from '@/presenter/diary/state/diary';
 import { TimelineMenuItem } from '../../../atoms/timeline/TimelineMenuItem';
 
 type Props = {
-  content: string;
+  date: string;
   onClickMenu: (e: React.MouseEvent) => void;
 };
 
-const useSendTwitter = () => {
+const useSendTwitter = (date: string) => {
+  const diaryEntry = useRecoilValue(diaryEntrySelector(date));
   const openSnackbar = useOpenSnackbar('WARNING');
 
-  return async (content: string) => {
-    console.log(`send twitter content: ${content}`);
+  return async () => {
+    console.log(`send twitter content: ${diaryEntry.content}`);
     openSnackbar('Twitter送信は実装されていません。');
   };
 };
 
 export const TimelineMenuItem_Twitter: React.FC<Props> = ({
-  content,
+  date,
   onClickMenu,
 }) => {
-  const sendTwitter = useSendTwitter();
+  const sendTwitter = useSendTwitter(date);
 
   return (
     <TimelineMenuItem
       onClick={(e: React.MouseEvent) => {
-        sendTwitter(content);
+        sendTwitter();
         onClickMenu(e);
       }}
       icon={<TwitterIcon size={20} />}
