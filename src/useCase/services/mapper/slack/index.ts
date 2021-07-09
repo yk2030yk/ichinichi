@@ -5,6 +5,16 @@ export class SlackPayloadMapper implements ISlackPayloadMapper {
     return {
       blocks: [
         {
+          type: 'header',
+          text: {
+            type: 'plain_text',
+            text: '1日1つ強くなる',
+          },
+        },
+        {
+          type: 'divider',
+        },
+        {
           type: 'section',
           text: {
             type: 'mrkdwn',
