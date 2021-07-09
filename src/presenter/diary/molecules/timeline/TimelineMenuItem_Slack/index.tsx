@@ -22,7 +22,7 @@ const useSendSlack = (date: string) => {
   return async () => {
     try {
       if (!url) return;
-      await slackUseCase.sendDiaryTimeLine(url, diaryEntry.content);
+      await slackUseCase.sendDiaryTimeLine(url, diaryEntry);
     } catch (e) {
       openSnackbar('Slack通知に失敗しました');
     }

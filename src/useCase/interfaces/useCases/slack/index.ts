@@ -1,3 +1,5 @@
+import { DiaryEntry } from '@/useCase/viewModels/diary';
+
 export interface ISlackUseCase {
-  sendDiaryTimeLine: (webhookUrl: string, message: string) => void;
+  sendDiaryTimeLine: (webhookUrl: string, diaryEntry: DiaryEntry) => void;
 }

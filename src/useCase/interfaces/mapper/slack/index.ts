@@ -1,3 +1,5 @@
+import { DiaryEntry } from '@/useCase/viewModels/diary';
+
 export interface ISlackPayloadMapper {
-  createDiaryTimeLinePayload: (message: string) => any;
+  createDiaryTimeLinePayload: (diaryEntry: DiaryEntry) => any;
 }
