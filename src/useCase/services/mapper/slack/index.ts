@@ -1,17 +1,13 @@
+import { slackIcons } from '@/useCase/constants/slack';
 import { ISlackPayloadMapper } from '@/useCase/interfaces/mapper/slack';
 import { DiaryEntry } from '@/useCase/viewModels/diary';
-
-const slackIcons = {
-  tag: ':label:',
-};
-
-const slackMarkdownInlineCode = (text: string) => `\`${text}\``;
+import { markdown } from '@/useCase/utils/slack';
 
 export class SlackPayloadMapper implements ISlackPayloadMapper {
   createDiaryTimeLinePayload(diaryEntry: DiaryEntry) {
     const tagInlineCodeList = diaryEntry.tags
       .map((t) => t.label)
-      .map(slackMarkdownInlineCode)
+      .map(markdown.inlineCode)
       .join(' ');
 
     return {
