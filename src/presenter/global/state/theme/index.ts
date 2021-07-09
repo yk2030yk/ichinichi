@@ -1,7 +1,7 @@
 import { atom } from 'recoil';
-import { ThemeType, THEME_TYPE } from '@/domain/domainModels/theme';
+import { ThemeType } from '@/domain/domainModels/theme';
 
-export const themeTypeAtom = atom<ThemeType>({
+export const themeTypeAtom = atom<ThemeType | null>({
   key: 'global/theme/themeType',
-  default: THEME_TYPE.LIGHT,
+  default: null,
 });

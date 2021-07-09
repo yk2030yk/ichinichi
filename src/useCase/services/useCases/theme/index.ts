@@ -15,14 +15,14 @@ export class ThemeUseCase implements IThemeUseCase {
     return this.themeRepository.setThemeType(themeType);
   }
 
-  getThemeByType(themeType: ThemeType) {
+  getThemeByType(themeType: ThemeType | null) {
     switch (themeType) {
       case THEME_TYPE.LIGHT:
         return lightTheme;
       case THEME_TYPE.DARK:
         return darkTheme;
       default:
-        return lightTheme;
+        return null;
     }
   }
 
