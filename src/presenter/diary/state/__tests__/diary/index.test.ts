@@ -1,5 +1,5 @@
 import { diaryUseCaseAtom } from '@/presenter/global/state/dependency/diary';
-import { getDiaryUseCaseMock } from '@/useCase/mocks/services/diary';
+import { getDiaryUseCaseMock } from '@/useCase/mocks/services/useCases/diary';
 import { snapshot_UNSTABLE } from 'recoil';
 import { diaryAtom, diaryEntrySelector } from '../../diary';
 
