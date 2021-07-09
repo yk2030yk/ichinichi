@@ -1,25 +1,26 @@
 import { dateUseCaseAtom } from '@/presenter/global/state/dependency/date';
-import { diaryUseCaseAtom } from '@/presenter/global/state/dependency/diary';
+import { getDateUseCaseMock } from '@/useCase/mocks/services/useCases/date';
 import { snapshot_UNSTABLE } from 'recoil';
-import { diaryAtom, selectedYearAtom } from '../../diary';
+import { selectedYearAtom } from '../../diary';
 import { weekTextsSelector, heatMapCalendarSelector } from '../../heatmap';
 
 describe('weekTextsSelector test.', () => {
   test('get: should call useCase.', () => {
     const weekTexts = ['test'];
-    const mockFn = jest.fn().mockReturnValue(weekTexts);
-    const dateUseCase = { getWeekTexts: mockFn };
+
+    const dateUseCase = getDateUseCaseMock();
+    const getWeekTextsMock = jest.fn().mockReturnValue(weekTexts);
+    dateUseCase.getWeekTexts = getWeekTextsMock;
 
     const testSnapshot = snapshot_UNSTABLE(({ set }) => {
-      // @ts-ignore
       set(dateUseCaseAtom, dateUseCase);
     });
 
     const value = testSnapshot.getLoadable(weekTextsSelector).getValue();
 
     expect(value).toMatchObject(weekTexts);
-    expect(mockFn.mock.calls.length).toBe(1);
-    expect(mockFn.mock.calls[0].length).toBe(0);
+    expect(getWeekTextsMock.mock.calls.length).toBe(1);
+    expect(getWeekTextsMock.mock.calls[0].length).toBe(0);
   });
 });
 
@@ -35,11 +36,12 @@ describe('heatMapCalendarSelector test.', () => {
         formattedDate: '2021/01/01',
       },
     ];
-    const mockFn = jest.fn().mockReturnValue(heatMapCalendar);
-    const dateUseCase = { getHeatMapCalendar: mockFn };
+
+    const dateUseCase = getDateUseCaseMock();
+    const getHeatMapCalendarMock = jest.fn().mockReturnValue(heatMapCalendar);
+    dateUseCase.getHeatMapCalendar = getHeatMapCalendarMock;
 
     const testSnapshot = snapshot_UNSTABLE(({ set }) => {
-      // @ts-ignore
       set(dateUseCaseAtom, dateUseCase);
       set(selectedYearAtom, year);
     });
@@ -47,30 +49,7 @@ describe('heatMapCalendarSelector test.', () => {
     const value = testSnapshot.getLoadable(heatMapCalendarSelector).getValue();
 
     expect(value).toMatchObject(heatMapCalendar);
-    expect(mockFn.mock.calls.length).toBe(1);
-    expect(mockFn.mock.calls[0][0]).toBe(year);
-  });
-});
-
-describe('tooltipDiaryEntrySelector test.', () => {
-  test('get: should call diaryEntrySelector', () => {
-    // const date = '2021-01-01';
-    // const diaryEntry = {};
-    // const diary: any[] = [];
-    // const mockFn = jest.fn().mockReturnValue(diaryEntry);
-    // const diaryUseCase = { findDiaryEntryFromDiaryByDate: mockFn };
-    // const testSnapshot = snapshot_UNSTABLE(({ set }) => {
-    //   // @ts-ignore
-    //   set(diaryUseCaseAtom, diaryUseCase);
-    //   set(tooltipDateAtom, date);
-    //   set(diaryAtom, diary);
-    // });
-    // const value = testSnapshot
-    //   .getLoadable(tooltipDiaryEntrySelector)
-    //   .getValue();
-    // expect(value).toMatchObject(diaryEntry);
-    // expect(mockFn.mock.calls.length).toBe(1);
-    // expect(mockFn.mock.calls[0][0]).toBe(diary);
-    // expect(mockFn.mock.calls[0][1]).toBe(date);
+    expect(getHeatMapCalendarMock.mock.calls.length).toBe(1);
+    expect(getHeatMapCalendarMock.mock.calls[0][0]).toBe(year);
   });
 });
