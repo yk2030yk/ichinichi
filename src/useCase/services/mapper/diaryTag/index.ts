@@ -1,6 +1,6 @@
 import { DiaryTag } from '@/useCase/viewModels/diary';
 import { DiaryTagDomain } from '@/domain/domainModels/diary';
-import { isNullOrUndefined } from '@/core/utils/value';
+import { isNullOrUndefined } from '@/core/utils/is';
 import { IDiaryTagUseCaseMapper } from '@/useCase/interfaces/mapper/diaryTag';
 
 export class DiaryTagUseCaseMapper implements IDiaryTagUseCaseMapper {

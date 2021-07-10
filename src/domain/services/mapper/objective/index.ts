@@ -1,4 +1,4 @@
-import { isNullOrUndefined } from '@/core/utils/value';
+import { isNullOrUndefined } from '@/core/utils/is';
 import { IObjectiveDomainMapper } from '@/domain/interfaces/mapper/objective';
 import { LargeObjectiveDomain } from '@/domain/domainModels/objective';
 import { DataModelKey } from '@/driver/constants/nedb/dataModelKey';

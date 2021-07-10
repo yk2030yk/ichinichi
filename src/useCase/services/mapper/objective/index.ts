@@ -1,7 +1,7 @@
 import { LargeObjectiveDomain } from '@/domain/domainModels/objective';
 import { LargeObjective } from '@/useCase/viewModels/objective';
 import { IObjectiveUseCaseMapper } from '@/useCase/interfaces/mapper/objective';
-import { isNullOrUndefined } from '@/core/utils/value';
+import { isNullOrUndefined } from '@/core/utils/is';
 
 export class ObjectiveUseCaseMapper implements IObjectiveUseCaseMapper {
   getDefaultViewModel(): LargeObjective {

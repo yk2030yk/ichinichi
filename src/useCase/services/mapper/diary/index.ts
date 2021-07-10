@@ -1,7 +1,7 @@
 import { DiaryEntry } from '@/useCase/viewModels/diary';
 import { DiaryEntryDomain } from '@/domain/domainModels/diary';
 import { IDiaryEntryUseCaseMapper } from '@/useCase/interfaces/mapper/diary';
-import { isNullOrUndefined } from '@/core/utils/value';
+import { isNullOrUndefined } from '@/core/utils/is';
 
 export class DiaryEntryUseCaseMapper implements IDiaryEntryUseCaseMapper {
   getDefaultViewModel(): DiaryEntry {

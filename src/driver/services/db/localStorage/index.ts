@@ -1,4 +1,4 @@
-import { isNullOrUndefined } from '@/core/utils/value';
+import { isNullOrUndefined } from '@/core/utils/is';
 import { ILocalStorage } from '@/driver/interfaces/db';
 
 export class LocalStorage implements ILocalStorage {

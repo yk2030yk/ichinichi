@@ -2,7 +2,7 @@ import { ISettingDomainMapper } from '@/domain/interfaces/mapper/setting';
 import { SettingDomain } from '@/domain/domainModels/setting';
 import { DataModelKey } from '@/driver/constants/nedb/dataModelKey';
 import { SettingDataModel } from '@/driver/models/setting';
-import { isNullOrUndefined } from '@/core/utils/value';
+import { isNullOrUndefined } from '@/core/utils/is';
 import { exceptionThrower } from '../../exceptionThrower';
 
 export class SettingDomainMapper implements ISettingDomainMapper {

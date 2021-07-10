@@ -1,4 +1,4 @@
-import { isNullOrUndefined } from '@/core/utils/value';
+import { isNullOrUndefined } from '@/core/utils/is';
 import { IDiaryEntryDomainMapper } from '@/domain/interfaces/mapper/diary';
 import { DiaryEntryDomain } from '@/domain/domainModels/diary';
 import { DataModelKey } from '@/driver/constants/nedb/dataModelKey';
