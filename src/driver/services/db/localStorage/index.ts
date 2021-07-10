@@ -5,7 +5,7 @@ export class LocalStorage implements ILocalStorage {
   get(key: string) {
     const item = window.localStorage.getItem(key);
     if (isNullOrUndefined(item)) {
-      throw new Error('hoge');
+      throw new Error(`localStorageに値が存在しません。(key: ${key})`);
     }
     return item as string;
   }
