@@ -1,37 +1,25 @@
-import { DiaryEntry } from '@/useCase/viewModels/diary';
-import { DiaryEntryUseCaseMapper } from '.';
+import { LargeObjective } from '@/driver/models/objective';
+import { ObjectiveUseCaseMapper } from '.';
 
-describe('DiaryEntryUseCaseMapper Test', () => {
-  const mapper = new DiaryEntryUseCaseMapper();
+describe('ObjectiveUseCaseMapper Test', () => {
+  const mapper = new ObjectiveUseCaseMapper();
 
   const defaultViewModel = {
-    userId: '',
-    date: '',
-    year: 0,
-    month: 0,
-    day: 0,
-    content: '',
-    tags: [],
+    id: 0,
+    label: '',
+    objectives: [],
   };
 
   const viewModel = {
-    userId: '1',
-    content: 'test',
-    date: '2021-01-01',
-    year: 2021,
-    month: 1,
-    day: 1,
-    tags: [{ label: 'test', color: '#fff' }],
+    id: 1,
+    label: 'label',
+    objectives: [],
   };
 
   const domainModel = {
-    userId: '1',
-    content: 'test',
-    date: '2021-01-01',
-    year: 2021,
-    month: 1,
-    day: 1,
-    tags: [{ label: 'test', color: '#fff' }],
+    id: 1,
+    label: 'label',
+    objectives: [],
   };
 
   describe('toDomainModel Test', () => {
@@ -41,12 +29,14 @@ describe('DiaryEntryUseCaseMapper Test', () => {
     });
 
     test('undefinedでデフォルト値が返ってくる', () => {
-      const result = mapper.toDomainModel((undefined as unknown) as DiaryEntry);
+      const result = mapper.toDomainModel(
+        (undefined as unknown) as LargeObjective
+      );
       expect(result).toMatchObject(defaultViewModel);
     });
 
     test('nullでデフォルト値が返ってくる', () => {
-      const result = mapper.toDomainModel((null as unknown) as DiaryEntry);
+      const result = mapper.toDomainModel((null as unknown) as LargeObjective);
       expect(result).toMatchObject(defaultViewModel);
     });
   });

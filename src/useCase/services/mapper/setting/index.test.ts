@@ -1,37 +1,19 @@
-import { DiaryEntry } from '@/useCase/viewModels/diary';
-import { DiaryEntryUseCaseMapper } from '.';
+import { Setting } from '@/useCase/viewModels/setting';
+import { SettingUseCaseMapper } from '.';
 
-describe('DiaryEntryUseCaseMapper Test', () => {
-  const mapper = new DiaryEntryUseCaseMapper();
+describe('SettingUseCaseMapper Test', () => {
+  const mapper = new SettingUseCaseMapper();
 
   const defaultViewModel = {
-    userId: '',
-    date: '',
-    year: 0,
-    month: 0,
-    day: 0,
-    content: '',
-    tags: [],
+    slackWebhookUrl: '',
   };
 
   const viewModel = {
-    userId: '1',
-    content: 'test',
-    date: '2021-01-01',
-    year: 2021,
-    month: 1,
-    day: 1,
-    tags: [{ label: 'test', color: '#fff' }],
+    slackWebhookUrl: 'https://example.com/',
   };
 
   const domainModel = {
-    userId: '1',
-    content: 'test',
-    date: '2021-01-01',
-    year: 2021,
-    month: 1,
-    day: 1,
-    tags: [{ label: 'test', color: '#fff' }],
+    slackWebhookUrl: 'https://example.com/',
   };
 
   describe('toDomainModel Test', () => {
@@ -41,12 +23,12 @@ describe('DiaryEntryUseCaseMapper Test', () => {
     });
 
     test('undefinedでデフォルト値が返ってくる', () => {
-      const result = mapper.toDomainModel((undefined as unknown) as DiaryEntry);
+      const result = mapper.toDomainModel((undefined as unknown) as Setting);
       expect(result).toMatchObject(defaultViewModel);
     });
 
     test('nullでデフォルト値が返ってくる', () => {
-      const result = mapper.toDomainModel((null as unknown) as DiaryEntry);
+      const result = mapper.toDomainModel((null as unknown) as Setting);
       expect(result).toMatchObject(defaultViewModel);
     });
   });
