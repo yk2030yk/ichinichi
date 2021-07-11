@@ -1,3 +1,3 @@
-import { ApplicationExceptionBase } from './base';
+import { ApplicationExceptionBase } from '../applicationBase';
 
 export class DataBaseException extends ApplicationExceptionBase {}

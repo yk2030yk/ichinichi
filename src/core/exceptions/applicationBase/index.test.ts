@@ -1,4 +1,4 @@
-import { ApplicationExceptionBase } from './base';
+import { ApplicationExceptionBase } from '.';
 
 describe('ApplicationExceptionBase Test', () => {
   test('エラーメッセージが期待通り', () => {
