@@ -11,7 +11,8 @@ export class DiaryTagDriver implements IDiaryTagDriver {
 
   async findDiaryTags() {
     const query = this.dataModelQuery.findDiaryTagsQuery();
-    return this.db.find<DiaryTagDataModel>(query);
+    const diaryTags = this.db.find<DiaryTagDataModel>(query);
+    return diaryTags;
   }
 
   async insertDiaryTag(data: DiaryTagDataModel) {

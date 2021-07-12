@@ -9,7 +9,7 @@ import { useIsCurrentPath } from '@/presenter/global/hooks/router';
 export const Cell_MboLink: React.FC = () => {
   const routeUseCase = useRouteUseCase();
   const history = useHistory();
-  const path = routeUseCase.getMboHomePath();
+  const path = routeUseCase.getObjectivePath();
   const selected = useIsCurrentPath(path);
 
   const onClick = () => history.push(path);

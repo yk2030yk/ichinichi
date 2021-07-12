@@ -15,8 +15,11 @@ export const createUseCaseState = <T extends any>(
     get: ({ get }) => get(useCaseAtom),
   });
 
+  /**
+   * 更新されないようにatomは隠蔽して、
+   * selector経由で取得されるようにする
+   */
   return {
-    atom: useCaseAtom,
     selector: useCaseSelector,
   };
 };

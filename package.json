@@ -1,7 +1,7 @@
 {
-  "name": "electron-react-boilerplate",
-  "productName": "ElectronReact",
-  "description": "Electron application boilerplate based on React, React Router, Webpack, React Fast Refresh for rapid application development",
+  "name": "itiniti",
+  "productName": "itiniti",
+  "description": "itiniti app",
   "scripts": {
     "build": "concurrently \"yarn build:main\" \"yarn build:renderer\"",
     "build:main": "cross-env NODE_ENV=production webpack --config ./.erb/configs/webpack.config.main.prod.babel.js",
@@ -30,8 +30,8 @@
     ]
   },
   "build": {
-    "productName": "ElectronReact",
-    "appId": "org.erb.ElectronReact",
+    "productName": "itiniti",
+    "appId": "org.erb.itiniti",
     "files": [
       "dist/",
       "node_modules/",
@@ -259,10 +259,7 @@
   "dependencies": {
     "@emotion/react": "^11.4.0",
     "@emotion/styled": "^11.3.0",
-    "@slack/webhook": "^6.0.0",
-    "@types/react-color": "^3.0.4",
     "body-scroll-lock": "^3.1.5",
-    "d3": "^6.7.0",
     "dayjs": "^1.10.5",
     "electron-debug": "^3.1.0",
     "electron-log": "^4.2.4",
@@ -270,7 +267,6 @@
     "history": "^5.0.0",
     "nedb": "^1.8.0",
     "react": "^17.0.1",
-    "react-color": "^2.19.3",
     "react-dom": "^17.0.1",
     "react-icons": "^4.2.0",
     "react-router-dom": "^5.2.0",

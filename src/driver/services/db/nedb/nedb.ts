@@ -11,3 +11,7 @@ export const setup = (pathname: string) => {
     autoload: true,
   });
 };
+
+const DATA_PATH_NAME = 'data/itiniti.nedb';
+
+export const nedb = setup(DATA_PATH_NAME);

@@ -5,8 +5,8 @@ class DriverExceptionThrower {
     throw new DataBaseException('');
   }
 
-  throwFindException() {
-    throw new DataBaseException('');
+  throwFindException(message: string) {
+    throw new DataBaseException(`findに失敗しました。${message}`);
   }
 
   throwDeleteException() {

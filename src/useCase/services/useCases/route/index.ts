@@ -5,11 +5,7 @@ export class RouteUseCase implements IRouteUseCase {
     return '/';
   }
 
-  getMboHomePath() {
-    return '/mbo';
-  }
-
-  getManageDiaryTagPath() {
-    return '/diary/manage/tag';
+  getObjectivePath() {
+    return '/objective';
   }
 }

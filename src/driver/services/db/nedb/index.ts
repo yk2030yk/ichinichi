@@ -1,14 +1,16 @@
-import Nedb from 'nedb';
-
 import { IDataBase } from '@/driver/interfaces/db';
 import { exceptionThrower } from '@/driver/services/exceptionThrower';
 
+import { nedb } from './nedb';
+
 export class NeDataBase implements IDataBase {
-  constructor(private nedb: Nedb) {}
+  // FIXME: injectするとfindやinsert時にエラーになってしまう。
+  // TypeError: Cannot add property 0, object is not extensible
+  // constructor(private nedb: Nedb) {}
 
   insert<T>(data: T): Promise<T> {
     return new Promise((resolve) => {
-      this.nedb.insert(data, (error, document) => {
+      nedb.insert(data, (error, document) => {
         if (error) exceptionThrower.throwInsertException();
         else resolve(document);
       });
@@ -17,26 +19,30 @@ export class NeDataBase implements IDataBase {
 
   findOne<T>(data: any): Promise<T> {
     return new Promise((resolve) => {
-      this.nedb.findOne(data, (error, document) => {
-        if (error) exceptionThrower.throwFindException();
+      nedb.findOne(data, (error, document) => {
+        if (error) exceptionThrower.throwFindException(error.message);
         else resolve(document);
       });
     });
   }
 
-  find<T>(data: any): Promise<T[]> {
+  async find<T>(data: any): Promise<T[]> {
     return new Promise((resolve) => {
-      this.nedb.find(data).exec((error, document) => {
-        if (error) exceptionThrower.throwFindException();
-        else resolve(document);
-      });
+      try {
+        nedb.find(data).exec((error, document) => {
+          if (error) exceptionThrower.throwFindException(error.message);
+          else resolve(document);
+        });
+      } catch (e) {
+        exceptionThrower.throwFindException(e.message);
+      }
     });
   }
 
   count(data: any): Promise<number> {
     return new Promise((resolve) => {
-      this.nedb.count(data).exec((error, document) => {
-        if (error) exceptionThrower.throwFindException();
+      nedb.count(data).exec((error, document) => {
+        if (error) exceptionThrower.throwFindException(error.message);
         else resolve(document);
       });
     });
@@ -51,7 +57,7 @@ export class NeDataBase implements IDataBase {
     }
   ): Promise<number> {
     return new Promise((resolve) => {
-      this.nedb.update(query, data, options, (error, document) => {
+      nedb.update(query, data, options, (error, document) => {
         if (error) exceptionThrower.throwUpdateException();
         else resolve(document);
       });
@@ -60,7 +66,7 @@ export class NeDataBase implements IDataBase {
 
   remove(query: any, options = { multi: true }): Promise<number> {
     return new Promise((resolve) => {
-      this.nedb.remove(query, options, (error, document) => {
+      nedb.remove(query, options, (error, document) => {
         if (error) exceptionThrower.throwUpdateException();
         else resolve(document);
       });

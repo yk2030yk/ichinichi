@@ -6,7 +6,8 @@ export class DiaryDriver implements IDiaryDriver {
   constructor(private db: IDataBase) {}
 
   async findDiary(query: any) {
-    return this.db.find<DiaryEntryDataModel>(query);
+    const diary = await this.db.find<DiaryEntryDataModel>(query);
+    return diary;
   }
 
   async updateDiary(query: any, data: DiaryEntryDataModel) {

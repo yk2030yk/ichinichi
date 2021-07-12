@@ -6,7 +6,7 @@ import { DiaryTimeline } from '../../organisms/timeline/DiaryTimeline';
 import { SubMenu } from '../../organisms/submenu/SubMenu';
 import * as S from './styled';
 
-export const MemoListLayout: React.FC = () => {
+export const DiaryPageLayout: React.FC = () => {
   return (
     <GlobalLayout
       subMenuContent={<SubMenu />}
