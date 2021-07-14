@@ -32,4 +32,11 @@ export interface IDateUseCase {
       formattedDate: string;
     }[];
   }[];
+
+  getToday: () => {
+    date: string;
+    year: number;
+    month: number;
+    day: number;
+  };
 }

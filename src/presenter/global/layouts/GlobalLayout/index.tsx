@@ -5,7 +5,7 @@ import { ResizePanel } from '@/presenter/core/ui/ResizePanel';
 import * as S from './styled';
 
 type Props = {
-  subMenuContent: React.ReactElement;
+  subMenuContent?: React.ReactElement;
   mainContent: React.ReactElement;
 };
 
@@ -18,9 +18,11 @@ export const GlobalLayout: React.FC<Props> = ({
       <S.LeftContent>
         <GlobalSideMenu />
       </S.LeftContent>
-      <ResizePanel initialWidth={200} minWidth={150} maxWidth={300}>
-        <S.MiddleContent>{subMenuContent}</S.MiddleContent>
-      </ResizePanel>
+      {subMenuContent && (
+        <ResizePanel initialWidth={200} minWidth={150} maxWidth={300}>
+          <S.MiddleContent>{subMenuContent}</S.MiddleContent>
+        </ResizePanel>
+      )}
       <S.RightContent>{mainContent}</S.RightContent>
     </S.Wrapper>
   );

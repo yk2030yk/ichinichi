@@ -5,6 +5,14 @@ export class RouteUseCase implements IRouteUseCase {
     return '/';
   }
 
+  getDiaryPath() {
+    return '/diary';
+  }
+
+  getSettingPath() {
+    return '/setting';
+  }
+
   getObjectivePath() {
     return '/objective';
   }

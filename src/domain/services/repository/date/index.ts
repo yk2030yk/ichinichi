@@ -124,4 +124,8 @@ export class DateRepository implements IDateRepository {
 
     return list;
   }
+
+  getTodayData() {
+    return this.getDateInfo(dayjs().toDate());
+  }
 }

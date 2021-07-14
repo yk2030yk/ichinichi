@@ -28,4 +28,6 @@ export interface IDateRepository {
   getMonthDateList: (year: number, month: number) => DateInfoDomain[];
 
   getYearDateList: (year?: number) => DateInfoDomain[];
+
+  getTodayData: (year?: number) => DateInfoDomain;
 }

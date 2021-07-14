@@ -6,5 +6,7 @@ type PathCreator<
 
 export interface IRouteUseCase {
   getHomePath: PathCreator;
+  getDiaryPath: PathCreator;
   getObjectivePath: PathCreator;
+  getSettingPath: PathCreator;
 }

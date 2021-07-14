@@ -1,16 +1,16 @@
 import React from 'react';
 
-import { DiaryPageLayout } from '../../layouts/DiaryPageLayout';
+import { HomePageLayout } from '../../layouts/HomePageLayout';
 import { useLoadDiary } from '../../hooks/diary';
 import { useLoadDiaryTags } from '../../hooks/diaryTag';
 import { DiaryTagManageModalHandler } from '../../organisms/diaryTag/DiaryTagManageModalHandler';
 
-export const DiaryPage: React.FC = () => {
+export const HomePage: React.FC = () => {
   useLoadDiaryTags();
   useLoadDiary();
   return (
     <>
-      <DiaryPageLayout />
+      <HomePageLayout />
       <DiaryTagManageModalHandler />
     </>
   );

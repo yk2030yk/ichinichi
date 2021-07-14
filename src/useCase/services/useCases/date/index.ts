@@ -9,6 +9,10 @@ export class DateUseCase implements IDateUseCase {
     return this.dateRepository.isToday(date);
   }
 
+  getToday() {
+    return this.dateRepository.getTodayData();
+  }
+
   getAvailableYears() {
     return this.dateRepository.getAvailableYears();
   }

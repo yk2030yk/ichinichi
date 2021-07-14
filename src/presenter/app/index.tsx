@@ -2,10 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { RecoilRoot } from 'recoil';
 
-import { SettingModal } from '../setting/organisms/modal/SettingModal';
-import { GlobalSnackbarHandler } from '../global/organisms/snackbar/GlobalSnackbarHandler';
-import { ConfirmAlertHandler } from '../global/organisms/alert/ConfirmAlertHandler';
 import { Routes } from './routes';
+import { GlobalComponents } from './globalComponents';
 import { ApplicationThemeProvider } from './theme';
 
 export const App = () => {
@@ -14,9 +12,7 @@ export const App = () => {
       <ApplicationThemeProvider>
         <Router>
           <Routes />
-          <SettingModal />
-          <GlobalSnackbarHandler />
-          <ConfirmAlertHandler />
+          <GlobalComponents />
         </Router>
       </ApplicationThemeProvider>
     </RecoilRoot>

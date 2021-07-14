@@ -14,3 +14,10 @@ export type LargeObjective = {
   label: string;
   objectives: MediumObjective[];
 };
+
+export type ObjectiveGoal = {
+  title: string;
+  picked: boolean;
+  limit: string;
+  done: boolean;
+};
