@@ -2,7 +2,7 @@ import React from 'react';
 import { ObjectiveGoal } from '@/useCase/viewModels/objective';
 
 import { Card } from '@/presenter/core/ui/Card';
-import { DoneIcon, PinIcon } from '@/presenter/core/atoms/icons';
+import { PinIcon } from '@/presenter/core/atoms/icons';
 import * as S from './styled';
 
 type Props = {
