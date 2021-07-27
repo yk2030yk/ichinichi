@@ -2,14 +2,14 @@ import { atom, DefaultValue, selectorFamily } from 'recoil';
 import { diaryUseCaseSelector } from '@/presenter/global/state/dependency';
 import { DiaryEntry } from '@/useCase/viewModels/diary';
 
-export const selectedYearAtom = atom<number>({
+export const selectedYearAtom = atom<number | undefined>({
   key: 'diary/atom/selectedYear',
   default: 2021,
 });
 
-export const selectedMonthAtom = atom<number>({
+export const selectedMonthAtom = atom<number | undefined>({
   key: 'diary/atom/selectedMonth',
-  default: 6,
+  default: undefined,
 });
 
 export const diaryAtom = atom<DiaryEntry[]>({

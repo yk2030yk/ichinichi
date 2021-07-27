@@ -11,6 +11,7 @@ export const useLoadDiary = () => {
   const setDiary = useSetRecoilState(diaryAtom);
 
   const load = useCallback(async () => {
+    if (!year) return;
     setDiary(await diaryUseCase.findDiaryByYear(userId, year));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userId, year, diaryUseCase]);
