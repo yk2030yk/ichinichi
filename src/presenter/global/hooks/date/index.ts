@@ -7,6 +7,7 @@ export const useReloadToday = () => {
 
   useEffect(() => {
     setReloadToday((pre) => pre + 1);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 };
 
