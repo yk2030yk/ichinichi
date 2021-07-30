@@ -12,8 +12,4 @@ export class RouteUseCase implements IRouteUseCase {
   getSettingPath() {
     return '/setting';
   }
-
-  getObjectivePath() {
-    return '/objective';
-  }
 }

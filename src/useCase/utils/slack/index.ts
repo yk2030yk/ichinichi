@@ -1,2 +1,5 @@
-const inlineCode = (text: string) => `\`${text}\``;
-export const markdown = { inlineCode };
+export class SlackMarkdown {
+  inlineCode(text: string) {
+    return `\`${text}\``;
+  }
+}
