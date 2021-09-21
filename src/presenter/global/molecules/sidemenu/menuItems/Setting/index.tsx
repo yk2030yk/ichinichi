@@ -6,7 +6,7 @@ import { SideMenuCell } from '@/presenter/global/atoms/sidemenu/SideMenuCell';
 import { useRouteUseCase } from '@/presenter/global/hooks/dependency';
 import { useIsCurrentPath } from '@/presenter/global/hooks/router';
 
-export const Cell_SettingLink: React.FC = () => {
+export const Setting: React.FC = () => {
   const routeUseCase = useRouteUseCase();
   const history = useHistory();
   const path = routeUseCase.getSettingPath();

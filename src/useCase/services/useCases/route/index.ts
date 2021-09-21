@@ -9,6 +9,10 @@ export class RouteUseCase implements IRouteUseCase {
     return '/diary';
   }
 
+  getObjectivePath() {
+    return '/objective';
+  }
+
   getSettingPath() {
     return '/setting';
   }

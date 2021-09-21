@@ -8,7 +8,7 @@ type CssGenerators<T extends {}> = (
   | SerializedStyles
 )[];
 
-type StyledElements = 'div' | 'input' | 'p' | 'button';
+type StyledElements = 'div' | 'input' | 'p' | 'button' | 'textarea';
 
 export const mergeMixins = <T extends {}>(cssGenerators: CssGenerators<T>) => (
   props: { theme: Theme } & T
@@ -37,4 +37,5 @@ export const styledElement = (elementType: StyledElements) => <
 export const styledDiv = styledElement('div');
 export const styledP = styledElement('p');
 export const styledInput = styledElement('input');
+export const styledTextArea = styledElement('textarea');
 export const styledButton = styledElement('button');

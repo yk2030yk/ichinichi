@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import { useRecoilValue } from 'recoil';
 import { AiOutlineMore, AiOutlineCopy } from 'react-icons/ai';
 
 import { useLockScroll } from '@/presenter/global/hooks/window';
 import { diaryEntrySelector } from '@/presenter/diary/state/diary';
-import { useRecoilValue } from 'recoil';
 import { useOpenSnackbar } from '@/presenter/global/hooks/snackbar';
+import { useOpen } from '@/presenter/core/hooks/useOpen';
 import { TimelineCurrentInfo } from '../TimelineCurrentInfo';
 import { TimelineEditor } from '../TimelineEditor';
 import { TimelineMenu } from '../TimelineMenu';
@@ -36,19 +37,6 @@ const useTimelineMenu = () => {
   };
 };
 
-const useEdit = () => {
-  const [isEdit, setIsEdit] = useState(false);
-
-  const openEdit = () => setIsEdit(true);
-  const closeEdit = () => setIsEdit(false);
-
-  return {
-    isEdit,
-    openEdit,
-    closeEdit,
-  };
-};
-
 export const TimelineCard: React.FC<Props> = ({ date, title }) => {
   const {
     isOpenTimelineMenu,
@@ -56,10 +44,12 @@ export const TimelineCard: React.FC<Props> = ({ date, title }) => {
     closeTimelineMenu,
   } = useTimelineMenu();
 
-  const { isEdit, openEdit, closeEdit } = useEdit();
+  const [isEdit, openEdit, closeEdit] = useOpen();
 
   const diaryEntry = useRecoilValue(diaryEntrySelector(date));
+
   const openSnackbar = useOpenSnackbar('SUCCESS', true);
+
   const onClickCopy = async () => {
     await navigator.clipboard.writeText(diaryEntry.content);
     openSnackbar('copied!');

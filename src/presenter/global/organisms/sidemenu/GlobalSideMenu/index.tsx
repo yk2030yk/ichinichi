@@ -1,15 +1,15 @@
 import React from 'react';
 
-import { Cell_DiaryLink } from '@/presenter/global/molecules/sidemenu/Cell_DiaryLink';
-import { Cell_HomeLink } from '@/presenter/global/molecules/sidemenu/Cell_HomeLink';
-import { Cell_SettingLink } from '@/presenter/global/molecules/sidemenu/Cell_SettingLink';
+import { MenuItems } from '@/presenter/global/molecules/sidemenu/menuItems';
+
 import * as S from './styled';
 
 export const GlobalSideMenu: React.FC = () => {
   const items = [
-    { key: 'home', component: <Cell_HomeLink /> },
-    { key: 'diary', component: <Cell_DiaryLink /> },
-    { key: 'setting', component: <Cell_SettingLink /> },
+    { key: 'home', component: <MenuItems.Home /> },
+    { key: 'diary', component: <MenuItems.Diary /> },
+    { key: 'objective', component: <MenuItems.Objective /> },
+    { key: 'setting', component: <MenuItems.Setting /> },
   ];
 
   return (
